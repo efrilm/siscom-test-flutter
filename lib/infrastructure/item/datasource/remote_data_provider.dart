@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:dartz/dartz.dart';
 import 'package:data_channel/data_channel.dart';
 import 'package:injectable/injectable.dart';
 
@@ -112,6 +113,23 @@ class ItemRemoteDataProvider {
       return DC.data(dto);
     } on ApiFailure catch (e, s) {
       log('updateItemError', name: _logName, error: e, stackTrace: s);
+      return DC.error(ItemFailure.serverError(e));
+    }
+  }
+
+  Future<DC<ItemFailure, Unit>> destroy({required String id}) async {
+    try {
+      final response = await _apiClient.delete("${ApiPath.item}/$id");
+
+      if (response.data['success'] == false) {
+        return DC.error(
+          ItemFailure.dynamicErrorMessage(response.data['message']),
+        );
+      }
+
+      return DC.data(unit);
+    } on ApiFailure catch (e, s) {
+      log('destroyItemError', name: _logName, error: e, stackTrace: s);
       return DC.error(ItemFailure.serverError(e));
     }
   }

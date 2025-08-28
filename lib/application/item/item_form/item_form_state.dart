@@ -9,11 +9,13 @@ class ItemFormState with _$ItemFormState {
     required TextEditingController priceController,
     required Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     required Option<Either<ItemFailure, Item>> failureOrEditItemOption,
+    required Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
     String? itemGroup,
     Category? selectedCategory,
     @Default(false) bool isValid,
     @Default(false) bool isCreateSubmitting,
     @Default(false) bool isEditSubmitting,
+    @Default(false) bool isDeleteSubmitting,
     @Default(false) bool showErrorMessages,
   }) = _ItemFormState;
 
@@ -24,5 +26,6 @@ class ItemFormState with _$ItemFormState {
     priceController: TextEditingController(),
     item: Item.empty(),
     failureOrEditItemOption: none(),
+    failureOrDeleteItemOption: none(),
   );
 }

@@ -10,6 +10,7 @@ class ItemCard extends StatelessWidget {
   final bool isSelected;
   final ValueChanged<bool?>? onSelectionChanged;
   final VoidCallback? onLongPress;
+  final Function()? onDeleted;
 
   const ItemCard({
     super.key,
@@ -18,6 +19,7 @@ class ItemCard extends StatelessWidget {
     this.isSelected = false,
     this.onSelectionChanged,
     this.onLongPress,
+    this.onDeleted,
   });
 
   @override
@@ -26,7 +28,8 @@ class ItemCard extends StatelessWidget {
       onLongPress: onLongPress,
       onTap: isEditMode
           ? () => onSelectionChanged?.call(!isSelected)
-          : () => ItemDetailBottomSheet.show(context, item),
+          : () =>
+                ItemDetailBottomSheet.show(context, item, onDeleted: onDeleted),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16),
         margin: EdgeInsets.symmetric(horizontal: 16),

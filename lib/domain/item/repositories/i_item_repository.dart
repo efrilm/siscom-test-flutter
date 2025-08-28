@@ -23,4 +23,6 @@ abstract class IItemRepository {
     required String itemGroup,
     required String price,
   });
+
+  Future<Either<ItemFailure, Unit>> delete({required String id});
 }

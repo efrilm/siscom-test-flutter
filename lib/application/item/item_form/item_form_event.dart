@@ -10,4 +10,5 @@ class ItemFormEvent with _$ItemFormEvent {
       _ItemGroupChanged;
   const factory ItemFormEvent.created() = _Created;
   const factory ItemFormEvent.edited() = _Edited;
+  const factory ItemFormEvent.deleted(String id) = _Deleted;
 }

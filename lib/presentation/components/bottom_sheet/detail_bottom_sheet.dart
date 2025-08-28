@@ -5,19 +5,20 @@ import '../../../common/theme/theme.dart';
 import '../../../domain/item/item.dart';
 import '../../router/app_router.gr.dart';
 import '../button/button.dart';
-import '../modal/delete_dialog.dart';
 
 class ItemDetailBottomSheet extends StatelessWidget {
   final Item item;
+  final Function()? onDeleted;
 
-  const ItemDetailBottomSheet({super.key, required this.item});
+  const ItemDetailBottomSheet({super.key, required this.item, this.onDeleted});
 
-  static void show(BuildContext context, Item item) {
+  static void show(BuildContext context, Item item, {Function()? onDeleted}) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => ItemDetailBottomSheet(item: item),
+      builder: (context) =>
+          ItemDetailBottomSheet(item: item, onDeleted: onDeleted),
     );
   }
 
@@ -143,7 +144,12 @@ class ItemDetailBottomSheet extends StatelessWidget {
                   Expanded(
                     child: AppOutlineButton(
                       text: 'Hapus Barang',
-                      onPressed: () => _showDeleteConfirmation(context),
+                      onPressed: () {
+                        context.router.maybePop();
+                        Future.delayed(Duration(milliseconds: 200), () {
+                          onDeleted?.call();
+                        });
+                      },
                     ),
                   ),
                   SizedBox(width: 12),
@@ -195,9 +201,5 @@ class ItemDetailBottomSheet extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _showDeleteConfirmation(BuildContext context) {
-    DeleteConfirmationDialog.show(context: context);
   }
 }

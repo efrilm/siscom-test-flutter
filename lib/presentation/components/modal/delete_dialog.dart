@@ -23,8 +23,10 @@ class DeleteConfirmationDialog {
     return showDialog<bool>(
       context: context,
       barrierDismissible: false,
+
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor: AppColor.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

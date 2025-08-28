@@ -25,6 +25,7 @@ mixin _$ItemFormEvent {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -34,6 +35,7 @@ mixin _$ItemFormEvent {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -43,6 +45,7 @@ mixin _$ItemFormEvent {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +56,7 @@ mixin _$ItemFormEvent {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -62,6 +66,7 @@ mixin _$ItemFormEvent {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -71,6 +76,7 @@ mixin _$ItemFormEvent {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -185,6 +191,7 @@ class _$LoadItemImpl implements _LoadItem {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return loadItem(item);
   }
@@ -198,6 +205,7 @@ class _$LoadItemImpl implements _LoadItem {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return loadItem?.call(item);
   }
@@ -211,6 +219,7 @@ class _$LoadItemImpl implements _LoadItem {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (loadItem != null) {
@@ -228,6 +237,7 @@ class _$LoadItemImpl implements _LoadItem {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return loadItem(this);
   }
@@ -241,6 +251,7 @@ class _$LoadItemImpl implements _LoadItem {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return loadItem?.call(this);
   }
@@ -254,6 +265,7 @@ class _$LoadItemImpl implements _LoadItem {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (loadItem != null) {
@@ -324,6 +336,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return isValidChanged();
   }
@@ -337,6 +350,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return isValidChanged?.call();
   }
@@ -350,6 +364,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -367,6 +382,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return isValidChanged(this);
   }
@@ -380,6 +396,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return isValidChanged?.call(this);
   }
@@ -393,6 +410,7 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -498,6 +516,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return categoryChanged(category);
   }
@@ -511,6 +530,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return categoryChanged?.call(category);
   }
@@ -524,6 +544,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -541,6 +562,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return categoryChanged(this);
   }
@@ -554,6 +576,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return categoryChanged?.call(this);
   }
@@ -567,6 +590,7 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -669,6 +693,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return itemGroupChanged(itemGroup);
   }
@@ -682,6 +707,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return itemGroupChanged?.call(itemGroup);
   }
@@ -695,6 +721,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -712,6 +739,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return itemGroupChanged(this);
   }
@@ -725,6 +753,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return itemGroupChanged?.call(this);
   }
@@ -738,6 +767,7 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -809,6 +839,7 @@ class _$CreatedImpl implements _Created {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return created();
   }
@@ -822,6 +853,7 @@ class _$CreatedImpl implements _Created {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return created?.call();
   }
@@ -835,6 +867,7 @@ class _$CreatedImpl implements _Created {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -852,6 +885,7 @@ class _$CreatedImpl implements _Created {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return created(this);
   }
@@ -865,6 +899,7 @@ class _$CreatedImpl implements _Created {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return created?.call(this);
   }
@@ -878,6 +913,7 @@ class _$CreatedImpl implements _Created {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -940,6 +976,7 @@ class _$EditedImpl implements _Edited {
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
     required TResult Function() edited,
+    required TResult Function(String id) deleted,
   }) {
     return edited();
   }
@@ -953,6 +990,7 @@ class _$EditedImpl implements _Edited {
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
     TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
   }) {
     return edited?.call();
   }
@@ -966,6 +1004,7 @@ class _$EditedImpl implements _Edited {
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
     TResult Function()? edited,
+    TResult Function(String id)? deleted,
     required TResult orElse(),
   }) {
     if (edited != null) {
@@ -983,6 +1022,7 @@ class _$EditedImpl implements _Edited {
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
   }) {
     return edited(this);
   }
@@ -996,6 +1036,7 @@ class _$EditedImpl implements _Edited {
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
   }) {
     return edited?.call(this);
   }
@@ -1009,6 +1050,7 @@ class _$EditedImpl implements _Edited {
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
     required TResult orElse(),
   }) {
     if (edited != null) {
@@ -1020,6 +1062,178 @@ class _$EditedImpl implements _Edited {
 
 abstract class _Edited implements ItemFormEvent {
   const factory _Edited() = _$EditedImpl;
+}
+
+/// @nodoc
+abstract class _$$DeletedImplCopyWith<$Res> {
+  factory _$$DeletedImplCopyWith(
+    _$DeletedImpl value,
+    $Res Function(_$DeletedImpl) then,
+  ) = __$$DeletedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String id});
+}
+
+/// @nodoc
+class __$$DeletedImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$DeletedImpl>
+    implements _$$DeletedImplCopyWith<$Res> {
+  __$$DeletedImplCopyWithImpl(
+    _$DeletedImpl _value,
+    $Res Function(_$DeletedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? id = null}) {
+    return _then(
+      _$DeletedImpl(
+        null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$DeletedImpl implements _Deleted {
+  const _$DeletedImpl(this.id);
+
+  @override
+  final String id;
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.deleted(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeletedImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
+      __$$DeletedImplCopyWithImpl<_$DeletedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() created,
+    required TResult Function() edited,
+    required TResult Function(String id) deleted,
+  }) {
+    return deleted(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
+  }) {
+    return deleted?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? created,
+    TResult Function()? edited,
+    TResult Function(String id)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
+  }) {
+    return deleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
+  }) {
+    return deleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
+    required TResult orElse(),
+  }) {
+    if (deleted != null) {
+      return deleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Deleted implements ItemFormEvent {
+  const factory _Deleted(final String id) = _$DeletedImpl;
+
+  String get id;
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeletedImplCopyWith<_$DeletedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1035,11 +1249,14 @@ mixin _$ItemFormState {
       throw _privateConstructorUsedError;
   Option<Either<ItemFailure, Item>> get failureOrEditItemOption =>
       throw _privateConstructorUsedError;
+  Option<Either<ItemFailure, Unit>> get failureOrDeleteItemOption =>
+      throw _privateConstructorUsedError;
   String? get itemGroup => throw _privateConstructorUsedError;
   Category? get selectedCategory => throw _privateConstructorUsedError;
   bool get isValid => throw _privateConstructorUsedError;
   bool get isCreateSubmitting => throw _privateConstructorUsedError;
   bool get isEditSubmitting => throw _privateConstructorUsedError;
+  bool get isDeleteSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
 
   /// Create a copy of ItemFormState
@@ -1063,11 +1280,13 @@ abstract class $ItemFormStateCopyWith<$Res> {
     TextEditingController priceController,
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     Option<Either<ItemFailure, Item>> failureOrEditItemOption,
+    Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
     bool isEditSubmitting,
+    bool isDeleteSubmitting,
     bool showErrorMessages,
   });
 
@@ -1096,11 +1315,13 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
     Object? priceController = null,
     Object? failureOrCreateItemOption = null,
     Object? failureOrEditItemOption = null,
+    Object? failureOrDeleteItemOption = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
     Object? isEditSubmitting = null,
+    Object? isDeleteSubmitting = null,
     Object? showErrorMessages = null,
   }) {
     return _then(
@@ -1129,6 +1350,10 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
                 ? _value.failureOrEditItemOption
                 : failureOrEditItemOption // ignore: cast_nullable_to_non_nullable
                       as Option<Either<ItemFailure, Item>>,
+            failureOrDeleteItemOption: null == failureOrDeleteItemOption
+                ? _value.failureOrDeleteItemOption
+                : failureOrDeleteItemOption // ignore: cast_nullable_to_non_nullable
+                      as Option<Either<ItemFailure, Unit>>,
             itemGroup: freezed == itemGroup
                 ? _value.itemGroup
                 : itemGroup // ignore: cast_nullable_to_non_nullable
@@ -1148,6 +1373,10 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
             isEditSubmitting: null == isEditSubmitting
                 ? _value.isEditSubmitting
                 : isEditSubmitting // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            isDeleteSubmitting: null == isDeleteSubmitting
+                ? _value.isDeleteSubmitting
+                : isDeleteSubmitting // ignore: cast_nullable_to_non_nullable
                       as bool,
             showErrorMessages: null == showErrorMessages
                 ? _value.showErrorMessages
@@ -1199,11 +1428,13 @@ abstract class _$$ItemFormStateImplCopyWith<$Res>
     TextEditingController priceController,
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     Option<Either<ItemFailure, Item>> failureOrEditItemOption,
+    Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
     bool isEditSubmitting,
+    bool isDeleteSubmitting,
     bool showErrorMessages,
   });
 
@@ -1233,11 +1464,13 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
     Object? priceController = null,
     Object? failureOrCreateItemOption = null,
     Object? failureOrEditItemOption = null,
+    Object? failureOrDeleteItemOption = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
     Object? isEditSubmitting = null,
+    Object? isDeleteSubmitting = null,
     Object? showErrorMessages = null,
   }) {
     return _then(
@@ -1266,6 +1499,10 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
             ? _value.failureOrEditItemOption
             : failureOrEditItemOption // ignore: cast_nullable_to_non_nullable
                   as Option<Either<ItemFailure, Item>>,
+        failureOrDeleteItemOption: null == failureOrDeleteItemOption
+            ? _value.failureOrDeleteItemOption
+            : failureOrDeleteItemOption // ignore: cast_nullable_to_non_nullable
+                  as Option<Either<ItemFailure, Unit>>,
         itemGroup: freezed == itemGroup
             ? _value.itemGroup
             : itemGroup // ignore: cast_nullable_to_non_nullable
@@ -1286,6 +1523,10 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
             ? _value.isEditSubmitting
             : isEditSubmitting // ignore: cast_nullable_to_non_nullable
                   as bool,
+        isDeleteSubmitting: null == isDeleteSubmitting
+            ? _value.isDeleteSubmitting
+            : isDeleteSubmitting // ignore: cast_nullable_to_non_nullable
+                  as bool,
         showErrorMessages: null == showErrorMessages
             ? _value.showErrorMessages
             : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1305,11 +1546,13 @@ class _$ItemFormStateImpl implements _ItemFormState {
     required this.priceController,
     required this.failureOrCreateItemOption,
     required this.failureOrEditItemOption,
+    required this.failureOrDeleteItemOption,
     this.itemGroup,
     this.selectedCategory,
     this.isValid = false,
     this.isCreateSubmitting = false,
     this.isEditSubmitting = false,
+    this.isDeleteSubmitting = false,
     this.showErrorMessages = false,
   });
 
@@ -1326,6 +1569,8 @@ class _$ItemFormStateImpl implements _ItemFormState {
   @override
   final Option<Either<ItemFailure, Item>> failureOrEditItemOption;
   @override
+  final Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption;
+  @override
   final String? itemGroup;
   @override
   final Category? selectedCategory;
@@ -1340,11 +1585,14 @@ class _$ItemFormStateImpl implements _ItemFormState {
   final bool isEditSubmitting;
   @override
   @JsonKey()
+  final bool isDeleteSubmitting;
+  @override
+  @JsonKey()
   final bool showErrorMessages;
 
   @override
   String toString() {
-    return 'ItemFormState(item: $item, itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, failureOrEditItemOption: $failureOrEditItemOption, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, isEditSubmitting: $isEditSubmitting, showErrorMessages: $showErrorMessages)';
+    return 'ItemFormState(item: $item, itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, failureOrEditItemOption: $failureOrEditItemOption, failureOrDeleteItemOption: $failureOrDeleteItemOption, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, isEditSubmitting: $isEditSubmitting, isDeleteSubmitting: $isDeleteSubmitting, showErrorMessages: $showErrorMessages)';
   }
 
   @override
@@ -1369,6 +1617,11 @@ class _$ItemFormStateImpl implements _ItemFormState {
                   failureOrEditItemOption,
                 ) ||
                 other.failureOrEditItemOption == failureOrEditItemOption) &&
+            (identical(
+                  other.failureOrDeleteItemOption,
+                  failureOrDeleteItemOption,
+                ) ||
+                other.failureOrDeleteItemOption == failureOrDeleteItemOption) &&
             (identical(other.itemGroup, itemGroup) ||
                 other.itemGroup == itemGroup) &&
             (identical(other.selectedCategory, selectedCategory) ||
@@ -1378,6 +1631,8 @@ class _$ItemFormStateImpl implements _ItemFormState {
                 other.isCreateSubmitting == isCreateSubmitting) &&
             (identical(other.isEditSubmitting, isEditSubmitting) ||
                 other.isEditSubmitting == isEditSubmitting) &&
+            (identical(other.isDeleteSubmitting, isDeleteSubmitting) ||
+                other.isDeleteSubmitting == isDeleteSubmitting) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages));
   }
@@ -1391,11 +1646,13 @@ class _$ItemFormStateImpl implements _ItemFormState {
     priceController,
     failureOrCreateItemOption,
     failureOrEditItemOption,
+    failureOrDeleteItemOption,
     itemGroup,
     selectedCategory,
     isValid,
     isCreateSubmitting,
     isEditSubmitting,
+    isDeleteSubmitting,
     showErrorMessages,
   );
 
@@ -1416,11 +1673,13 @@ abstract class _ItemFormState implements ItemFormState {
     required final TextEditingController priceController,
     required final Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     required final Option<Either<ItemFailure, Item>> failureOrEditItemOption,
+    required final Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
     final String? itemGroup,
     final Category? selectedCategory,
     final bool isValid,
     final bool isCreateSubmitting,
     final bool isEditSubmitting,
+    final bool isDeleteSubmitting,
     final bool showErrorMessages,
   }) = _$ItemFormStateImpl;
 
@@ -1437,6 +1696,8 @@ abstract class _ItemFormState implements ItemFormState {
   @override
   Option<Either<ItemFailure, Item>> get failureOrEditItemOption;
   @override
+  Option<Either<ItemFailure, Unit>> get failureOrDeleteItemOption;
+  @override
   String? get itemGroup;
   @override
   Category? get selectedCategory;
@@ -1446,6 +1707,8 @@ abstract class _ItemFormState implements ItemFormState {
   bool get isCreateSubmitting;
   @override
   bool get isEditSubmitting;
+  @override
+  bool get isDeleteSubmitting;
   @override
   bool get showErrorMessages;
 

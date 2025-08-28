@@ -135,6 +135,29 @@ class ItemFormBloc extends Bloc<ItemFormEvent, ItemFormState> {
           );
         }
       },
+      deleted: (e) async {
+        Either<ItemFailure, Unit>? failureOrItem;
+
+        emit(
+          state.copyWith(
+            isDeleteSubmitting: true,
+            failureOrDeleteItemOption: none(),
+          ),
+        );
+
+        if (e.id != "") {
+          failureOrItem = await _repository.delete(id: e.id);
+
+          emit(
+            state.copyWith(
+              isDeleteSubmitting: false,
+              failureOrDeleteItemOption: optionOf(failureOrItem),
+            ),
+          );
+
+          emit(state.copyWith(isDeleteSubmitting: false));
+        }
+      },
     );
   }
 }
