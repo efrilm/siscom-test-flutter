@@ -1,12 +1,15 @@
 part of 'field.dart';
 
 class AppSearchFormField extends StatelessWidget {
-  const AppSearchFormField({super.key});
+  final ValueChanged<String>? onChanged;
+
+  const AppSearchFormField({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: AppColor.primary,
+      onChanged: onChanged,
       decoration: InputDecoration(
         fillColor: AppColor.bgSecondary,
         filled: true,

@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../common/extension/extension.dart';
 import '../../../../../../common/theme/theme.dart';
+import '../../../../../../domain/item/item.dart';
+import '../../../../../components/bottom_sheet/detail_bottom_sheet.dart';
 
 class ItemSearchCard extends StatelessWidget {
-  const ItemSearchCard({super.key});
+  final Item item;
+  const ItemSearchCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => ItemDetailBottomSheet.show(context, item),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 16),
         margin: EdgeInsets.symmetric(horizontal: 16),
@@ -22,19 +26,19 @@ class ItemSearchCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Nama Barang',
+                    item.itemName,
                     style: AppStyle.md.copyWith(fontWeight: FontWeight.w500),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Kategori',
+                    item.category.name,
                     style: AppStyle.sm.copyWith(color: AppColor.textSecondary),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Kelompok Barang',
+                    item.itemGroup,
                     style: AppStyle.sm.copyWith(color: AppColor.textSecondary),
                   ),
                 ],
@@ -44,12 +48,12 @@ class ItemSearchCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  'Stok :  35',
+                  'Stok :  ${item.stock}',
                   style: AppStyle.sm.copyWith(color: AppColor.textSecondary),
                 ),
                 SizedBox(height: 8),
                 Text(
-                  "Rp. 100000",
+                  item.price.currencyFormatRp,
                   style: AppStyle.md.copyWith(fontWeight: FontWeight.w500),
                 ),
               ],
