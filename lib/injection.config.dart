@@ -14,6 +14,8 @@ import 'package:dio/dio.dart' as _i361;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
+import 'package:siscom_test_flutter/application/category/category_loader/category_loader_bloc.dart'
+    as _i552;
 import 'package:siscom_test_flutter/common/api/api_client.dart' as _i234;
 import 'package:siscom_test_flutter/common/di/di_auto_route.dart' as _i1057;
 import 'package:siscom_test_flutter/common/di/di_connectivity.dart' as _i314;
@@ -22,7 +24,12 @@ import 'package:siscom_test_flutter/common/di/di_shared_preferences.dart'
     as _i558;
 import 'package:siscom_test_flutter/common/network/network_client.dart'
     as _i848;
+import 'package:siscom_test_flutter/domain/category/category.dart' as _i767;
 import 'package:siscom_test_flutter/env.dart' as _i273;
+import 'package:siscom_test_flutter/infrastructure/category/datasource/remote_data_provider.dart'
+    as _i137;
+import 'package:siscom_test_flutter/infrastructure/category/repositories/category_repository.dart'
+    as _i60;
 import 'package:siscom_test_flutter/presentation/router/app_router.dart'
     as _i247;
 
@@ -54,6 +61,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i273.Env>(() => _i273.ProdEnv(), registerFor: {_prod});
     gh.lazySingleton<_i234.ApiClient>(
       () => _i234.ApiClient(gh<_i361.Dio>(), gh<_i273.Env>()),
+    );
+    gh.factory<_i137.CategoryRemoteDataProvider>(
+      () => _i137.CategoryRemoteDataProvider(gh<_i234.ApiClient>()),
+    );
+    gh.factory<_i767.ICategoryRepository>(
+      () => _i60.CategoryRepository(gh<_i137.CategoryRemoteDataProvider>()),
+    );
+    gh.factory<_i552.CategoryLoaderBloc>(
+      () => _i552.CategoryLoaderBloc(gh<_i767.ICategoryRepository>()),
     );
     return this;
   }

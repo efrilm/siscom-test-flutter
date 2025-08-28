@@ -28,6 +28,8 @@ dependencies:
   json_annotation: ^4.9.0
   shared_preferences: ^2.5.3
   dropdown_search: ^6.0.2
+  flutter_bloc: ^9.1.1
+  bloc: ^9.0.0
 
 dev_dependencies:
   flutter_test:

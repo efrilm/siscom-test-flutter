@@ -12,6 +12,7 @@ class AppDropdownSearchField<T> extends StatelessWidget {
   final bool enabled;
   final bool showSearchBox;
   final String? searchBoxHintText;
+  final bool Function(T, T)? compareFn;
 
   const AppDropdownSearchField({
     super.key,
@@ -26,6 +27,7 @@ class AppDropdownSearchField<T> extends StatelessWidget {
     this.enabled = true,
     this.showSearchBox = true,
     this.searchBoxHintText = "Cari...",
+    this.compareFn,
   });
 
   @override
@@ -54,6 +56,7 @@ class AppDropdownSearchField<T> extends StatelessWidget {
           onChanged: enabled ? onChanged : null,
           validator: validator,
           enabled: enabled,
+          compareFn: compareFn,
           popupProps: PopupProps.menu(
             showSearchBox: showSearchBox,
             searchFieldProps: TextFieldProps(
