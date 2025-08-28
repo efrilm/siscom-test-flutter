@@ -26,6 +26,25 @@ class ItemFormBloc extends Bloc<ItemFormEvent, ItemFormState> {
     Emitter<ItemFormState> emit,
   ) {
     return event.map(
+      loadItem: (e) async {
+        if (e.item.id != "") {
+          emit(
+            state.copyWith(
+              item: e.item,
+              itemNameController: TextEditingController(text: e.item.itemName),
+              stockController: TextEditingController(
+                text: e.item.stock.toString(),
+              ),
+              priceController: TextEditingController(
+                text: RupiahInputFormatter.formatRupiah(e.item.price),
+              ),
+              itemGroup: e.item.itemGroup,
+              selectedCategory: e.item.category,
+              isValid: true,
+            ),
+          );
+        }
+      },
       categoryChanged: (e) async {
         emit(state.copyWith(selectedCategory: e.category));
       },
@@ -78,6 +97,41 @@ class ItemFormBloc extends Bloc<ItemFormEvent, ItemFormState> {
 
           emit(
             state.copyWith(showErrorMessages: true, isCreateSubmitting: false),
+          );
+        }
+      },
+      edited: (e) async {
+        Either<ItemFailure, Item>? failureOrItem;
+
+        emit(
+          state.copyWith(
+            isEditSubmitting: true,
+            failureOrEditItemOption: none(),
+            showErrorMessages: false,
+          ),
+        );
+
+        if (state.isValid) {
+          failureOrItem = await _repository.edit(
+            id: state.item.id,
+            itemName: state.itemNameController.text,
+            categoryId: state.selectedCategory?.id ?? "",
+            stock: state.stockController.text,
+            itemGroup: state.itemGroup ?? "",
+            price: RupiahInputFormatter.getUnformattedValue(
+              state.priceController.text,
+            ).toString(),
+          );
+
+          emit(
+            state.copyWith(
+              isEditSubmitting: false,
+              failureOrEditItemOption: optionOf(failureOrItem),
+            ),
+          );
+
+          emit(
+            state.copyWith(showErrorMessages: true, isEditSubmitting: false),
           );
         }
       },

@@ -11,6 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
 import 'package:flutter/material.dart' as _i6;
+import 'package:siscom_test_flutter/domain/item/item.dart' as _i7;
 import 'package:siscom_test_flutter/presentation/pages/Items/item_page.dart'
     as _i2;
 import 'package:siscom_test_flutter/presentation/pages/Items/pages/item_form/item_form_page.dart'
@@ -26,10 +27,11 @@ class ItemFormRoute extends _i5.PageRouteInfo<ItemFormRouteArgs> {
   ItemFormRoute({
     _i6.Key? key,
     required bool isEdit,
+    required _i7.Item item,
     List<_i5.PageRouteInfo>? children,
   }) : super(
          ItemFormRoute.name,
-         args: ItemFormRouteArgs(key: key, isEdit: isEdit),
+         args: ItemFormRouteArgs(key: key, isEdit: isEdit, item: item),
          initialChildren: children,
        );
 
@@ -40,22 +42,28 @@ class ItemFormRoute extends _i5.PageRouteInfo<ItemFormRouteArgs> {
     builder: (data) {
       final args = data.argsAs<ItemFormRouteArgs>();
       return _i5.WrappedRoute(
-        child: _i1.ItemFormPage(key: args.key, isEdit: args.isEdit),
+        child: _i1.ItemFormPage(
+          key: args.key,
+          isEdit: args.isEdit,
+          item: args.item,
+        ),
       );
     },
   );
 }
 
 class ItemFormRouteArgs {
-  const ItemFormRouteArgs({this.key, required this.isEdit});
+  const ItemFormRouteArgs({this.key, required this.isEdit, required this.item});
 
   final _i6.Key? key;
 
   final bool isEdit;
 
+  final _i7.Item item;
+
   @override
   String toString() {
-    return 'ItemFormRouteArgs{key: $key, isEdit: $isEdit}';
+    return 'ItemFormRouteArgs{key: $key, isEdit: $isEdit, item: $item}';
   }
 }
 

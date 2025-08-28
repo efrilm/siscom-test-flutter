@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../application/item/item_loader/item_loader_bloc.dart';
 import '../../../common/theme/theme.dart';
+import '../../../domain/item/item.dart';
 import '../../../injection.dart';
 import '../../components/button/button.dart';
 import '../../components/card/empty_card.dart';
@@ -104,8 +105,9 @@ class _ItemPageState extends State<ItemPage> {
       ),
       floatingActionButton: !isEditMode
           ? FloatingActionButton.extended(
-              onPressed: () =>
-                  context.router.push(ItemFormRoute(isEdit: false)),
+              onPressed: () => context.router.push(
+                ItemFormRoute(isEdit: false, item: Item.empty()),
+              ),
               backgroundColor: AppColor.primary,
               foregroundColor: AppColor.white,
               elevation: 8,
@@ -201,8 +203,9 @@ class _ItemPageState extends State<ItemPage> {
                           subtitle: 'Silakan tambahkan barang baru',
                           icon: Icons.shopping_cart,
                           buttonText: 'Tambah Barang',
-                          onPressed: () =>
-                              context.router.push(ItemFormRoute(isEdit: false)),
+                          onPressed: () => context.router.push(
+                            ItemFormRoute(isEdit: false, item: Item.empty()),
+                          ),
                         ),
                       ),
                       if (!isEditMode) buildPullToRefreshInfo(),

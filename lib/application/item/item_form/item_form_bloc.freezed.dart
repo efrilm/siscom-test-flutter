@@ -19,46 +19,58 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ItemFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
+    required TResult Function() edited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
+    TResult? Function()? edited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
+    TResult Function()? edited,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -83,6 +95,184 @@ class _$ItemFormEventCopyWithImpl<$Res, $Val extends ItemFormEvent>
 
   /// Create a copy of ItemFormEvent
   /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$LoadItemImplCopyWith<$Res> {
+  factory _$$LoadItemImplCopyWith(
+    _$LoadItemImpl value,
+    $Res Function(_$LoadItemImpl) then,
+  ) = __$$LoadItemImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Item item});
+
+  $ItemCopyWith<$Res> get item;
+}
+
+/// @nodoc
+class __$$LoadItemImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$LoadItemImpl>
+    implements _$$LoadItemImplCopyWith<$Res> {
+  __$$LoadItemImplCopyWithImpl(
+    _$LoadItemImpl _value,
+    $Res Function(_$LoadItemImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? item = null}) {
+    return _then(
+      _$LoadItemImpl(
+        null == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as Item,
+      ),
+    );
+  }
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ItemCopyWith<$Res> get item {
+    return $ItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$LoadItemImpl implements _LoadItem {
+  const _$LoadItemImpl(this.item);
+
+  @override
+  final Item item;
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.loadItem(item: $item)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadItemImpl &&
+            (identical(other.item, item) || other.item == item));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, item);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadItemImplCopyWith<_$LoadItemImpl> get copyWith =>
+      __$$LoadItemImplCopyWithImpl<_$LoadItemImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() created,
+    required TResult Function() edited,
+  }) {
+    return loadItem(item);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+  }) {
+    return loadItem?.call(item);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? created,
+    TResult Function()? edited,
+    required TResult orElse(),
+  }) {
+    if (loadItem != null) {
+      return loadItem(item);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+  }) {
+    return loadItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+  }) {
+    return loadItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    required TResult orElse(),
+  }) {
+    if (loadItem != null) {
+      return loadItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadItem implements ItemFormEvent {
+  const factory _LoadItem(final Item item) = _$LoadItemImpl;
+
+  Item get item;
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadItemImplCopyWith<_$LoadItemImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -128,10 +318,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
+    required TResult Function() edited,
   }) {
     return isValidChanged();
   }
@@ -139,10 +331,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
+    TResult? Function()? edited,
   }) {
     return isValidChanged?.call();
   }
@@ -150,10 +344,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
+    TResult Function()? edited,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -165,10 +361,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
   }) {
     return isValidChanged(this);
   }
@@ -176,10 +374,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
   }) {
     return isValidChanged?.call(this);
   }
@@ -187,10 +387,12 @@ class _$IsValidChangedImpl implements _IsValidChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -290,10 +492,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
+    required TResult Function() edited,
   }) {
     return categoryChanged(category);
   }
@@ -301,10 +505,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
+    TResult? Function()? edited,
   }) {
     return categoryChanged?.call(category);
   }
@@ -312,10 +518,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
+    TResult Function()? edited,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -327,10 +535,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
   }) {
     return categoryChanged(this);
   }
@@ -338,10 +548,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
   }) {
     return categoryChanged?.call(this);
   }
@@ -349,10 +561,12 @@ class _$CategoryChangedImpl implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -449,10 +663,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
+    required TResult Function() edited,
   }) {
     return itemGroupChanged(itemGroup);
   }
@@ -460,10 +676,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
+    TResult? Function()? edited,
   }) {
     return itemGroupChanged?.call(itemGroup);
   }
@@ -471,10 +689,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
+    TResult Function()? edited,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -486,10 +706,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
   }) {
     return itemGroupChanged(this);
   }
@@ -497,10 +719,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
   }) {
     return itemGroupChanged?.call(this);
   }
@@ -508,10 +732,12 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -577,10 +803,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
     required TResult Function() created,
+    required TResult Function() edited,
   }) {
     return created();
   }
@@ -588,10 +816,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
     TResult? Function()? created,
+    TResult? Function()? edited,
   }) {
     return created?.call();
   }
@@ -599,10 +829,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
     TResult Function()? created,
+    TResult Function()? edited,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -614,10 +846,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
     required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
   }) {
     return created(this);
   }
@@ -625,10 +859,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
   }) {
     return created?.call(this);
   }
@@ -636,10 +872,12 @@ class _$CreatedImpl implements _Created {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
     TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -654,7 +892,139 @@ abstract class _Created implements ItemFormEvent {
 }
 
 /// @nodoc
+abstract class _$$EditedImplCopyWith<$Res> {
+  factory _$$EditedImplCopyWith(
+    _$EditedImpl value,
+    $Res Function(_$EditedImpl) then,
+  ) = __$$EditedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EditedImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$EditedImpl>
+    implements _$$EditedImplCopyWith<$Res> {
+  __$$EditedImplCopyWithImpl(
+    _$EditedImpl _value,
+    $Res Function(_$EditedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$EditedImpl implements _Edited {
+  const _$EditedImpl();
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.edited()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EditedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() created,
+    required TResult Function() edited,
+  }) {
+    return edited();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+  }) {
+    return edited?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? created,
+    TResult Function()? edited,
+    required TResult orElse(),
+  }) {
+    if (edited != null) {
+      return edited();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+  }) {
+    return edited(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+  }) {
+    return edited?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    required TResult orElse(),
+  }) {
+    if (edited != null) {
+      return edited(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Edited implements ItemFormEvent {
+  const factory _Edited() = _$EditedImpl;
+}
+
+/// @nodoc
 mixin _$ItemFormState {
+  Item get item => throw _privateConstructorUsedError;
   TextEditingController get itemNameController =>
       throw _privateConstructorUsedError;
   TextEditingController get stockController =>
@@ -663,10 +1033,13 @@ mixin _$ItemFormState {
       throw _privateConstructorUsedError;
   Option<Either<ItemFailure, Item>> get failureOrCreateItemOption =>
       throw _privateConstructorUsedError;
+  Option<Either<ItemFailure, Item>> get failureOrEditItemOption =>
+      throw _privateConstructorUsedError;
   String? get itemGroup => throw _privateConstructorUsedError;
   Category? get selectedCategory => throw _privateConstructorUsedError;
   bool get isValid => throw _privateConstructorUsedError;
   bool get isCreateSubmitting => throw _privateConstructorUsedError;
+  bool get isEditSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
 
   /// Create a copy of ItemFormState
@@ -684,17 +1057,21 @@ abstract class $ItemFormStateCopyWith<$Res> {
   ) = _$ItemFormStateCopyWithImpl<$Res, ItemFormState>;
   @useResult
   $Res call({
+    Item item,
     TextEditingController itemNameController,
     TextEditingController stockController,
     TextEditingController priceController,
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
+    Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
+    bool isEditSubmitting,
     bool showErrorMessages,
   });
 
+  $ItemCopyWith<$Res> get item;
   $CategoryCopyWith<$Res>? get selectedCategory;
 }
 
@@ -713,18 +1090,25 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? item = null,
     Object? itemNameController = null,
     Object? stockController = null,
     Object? priceController = null,
     Object? failureOrCreateItemOption = null,
+    Object? failureOrEditItemOption = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
+    Object? isEditSubmitting = null,
     Object? showErrorMessages = null,
   }) {
     return _then(
       _value.copyWith(
+            item: null == item
+                ? _value.item
+                : item // ignore: cast_nullable_to_non_nullable
+                      as Item,
             itemNameController: null == itemNameController
                 ? _value.itemNameController
                 : itemNameController // ignore: cast_nullable_to_non_nullable
@@ -740,6 +1124,10 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
             failureOrCreateItemOption: null == failureOrCreateItemOption
                 ? _value.failureOrCreateItemOption
                 : failureOrCreateItemOption // ignore: cast_nullable_to_non_nullable
+                      as Option<Either<ItemFailure, Item>>,
+            failureOrEditItemOption: null == failureOrEditItemOption
+                ? _value.failureOrEditItemOption
+                : failureOrEditItemOption // ignore: cast_nullable_to_non_nullable
                       as Option<Either<ItemFailure, Item>>,
             itemGroup: freezed == itemGroup
                 ? _value.itemGroup
@@ -757,6 +1145,10 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
                 ? _value.isCreateSubmitting
                 : isCreateSubmitting // ignore: cast_nullable_to_non_nullable
                       as bool,
+            isEditSubmitting: null == isEditSubmitting
+                ? _value.isEditSubmitting
+                : isEditSubmitting // ignore: cast_nullable_to_non_nullable
+                      as bool,
             showErrorMessages: null == showErrorMessages
                 ? _value.showErrorMessages
                 : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -764,6 +1156,16 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of ItemFormState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ItemCopyWith<$Res> get item {
+    return $ItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value) as $Val);
+    });
   }
 
   /// Create a copy of ItemFormState
@@ -791,17 +1193,22 @@ abstract class _$$ItemFormStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
+    Item item,
     TextEditingController itemNameController,
     TextEditingController stockController,
     TextEditingController priceController,
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
+    Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
+    bool isEditSubmitting,
     bool showErrorMessages,
   });
 
+  @override
+  $ItemCopyWith<$Res> get item;
   @override
   $CategoryCopyWith<$Res>? get selectedCategory;
 }
@@ -820,18 +1227,25 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? item = null,
     Object? itemNameController = null,
     Object? stockController = null,
     Object? priceController = null,
     Object? failureOrCreateItemOption = null,
+    Object? failureOrEditItemOption = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
+    Object? isEditSubmitting = null,
     Object? showErrorMessages = null,
   }) {
     return _then(
       _$ItemFormStateImpl(
+        item: null == item
+            ? _value.item
+            : item // ignore: cast_nullable_to_non_nullable
+                  as Item,
         itemNameController: null == itemNameController
             ? _value.itemNameController
             : itemNameController // ignore: cast_nullable_to_non_nullable
@@ -847,6 +1261,10 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
         failureOrCreateItemOption: null == failureOrCreateItemOption
             ? _value.failureOrCreateItemOption
             : failureOrCreateItemOption // ignore: cast_nullable_to_non_nullable
+                  as Option<Either<ItemFailure, Item>>,
+        failureOrEditItemOption: null == failureOrEditItemOption
+            ? _value.failureOrEditItemOption
+            : failureOrEditItemOption // ignore: cast_nullable_to_non_nullable
                   as Option<Either<ItemFailure, Item>>,
         itemGroup: freezed == itemGroup
             ? _value.itemGroup
@@ -864,6 +1282,10 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
             ? _value.isCreateSubmitting
             : isCreateSubmitting // ignore: cast_nullable_to_non_nullable
                   as bool,
+        isEditSubmitting: null == isEditSubmitting
+            ? _value.isEditSubmitting
+            : isEditSubmitting // ignore: cast_nullable_to_non_nullable
+                  as bool,
         showErrorMessages: null == showErrorMessages
             ? _value.showErrorMessages
             : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -877,17 +1299,22 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
 
 class _$ItemFormStateImpl implements _ItemFormState {
   const _$ItemFormStateImpl({
+    required this.item,
     required this.itemNameController,
     required this.stockController,
     required this.priceController,
     required this.failureOrCreateItemOption,
+    required this.failureOrEditItemOption,
     this.itemGroup,
     this.selectedCategory,
     this.isValid = false,
     this.isCreateSubmitting = false,
+    this.isEditSubmitting = false,
     this.showErrorMessages = false,
   });
 
+  @override
+  final Item item;
   @override
   final TextEditingController itemNameController;
   @override
@@ -896,6 +1323,8 @@ class _$ItemFormStateImpl implements _ItemFormState {
   final TextEditingController priceController;
   @override
   final Option<Either<ItemFailure, Item>> failureOrCreateItemOption;
+  @override
+  final Option<Either<ItemFailure, Item>> failureOrEditItemOption;
   @override
   final String? itemGroup;
   @override
@@ -908,11 +1337,14 @@ class _$ItemFormStateImpl implements _ItemFormState {
   final bool isCreateSubmitting;
   @override
   @JsonKey()
+  final bool isEditSubmitting;
+  @override
+  @JsonKey()
   final bool showErrorMessages;
 
   @override
   String toString() {
-    return 'ItemFormState(itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, showErrorMessages: $showErrorMessages)';
+    return 'ItemFormState(item: $item, itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, failureOrEditItemOption: $failureOrEditItemOption, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, isEditSubmitting: $isEditSubmitting, showErrorMessages: $showErrorMessages)';
   }
 
   @override
@@ -920,6 +1352,7 @@ class _$ItemFormStateImpl implements _ItemFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ItemFormStateImpl &&
+            (identical(other.item, item) || other.item == item) &&
             (identical(other.itemNameController, itemNameController) ||
                 other.itemNameController == itemNameController) &&
             (identical(other.stockController, stockController) ||
@@ -931,6 +1364,11 @@ class _$ItemFormStateImpl implements _ItemFormState {
                   failureOrCreateItemOption,
                 ) ||
                 other.failureOrCreateItemOption == failureOrCreateItemOption) &&
+            (identical(
+                  other.failureOrEditItemOption,
+                  failureOrEditItemOption,
+                ) ||
+                other.failureOrEditItemOption == failureOrEditItemOption) &&
             (identical(other.itemGroup, itemGroup) ||
                 other.itemGroup == itemGroup) &&
             (identical(other.selectedCategory, selectedCategory) ||
@@ -938,6 +1376,8 @@ class _$ItemFormStateImpl implements _ItemFormState {
             (identical(other.isValid, isValid) || other.isValid == isValid) &&
             (identical(other.isCreateSubmitting, isCreateSubmitting) ||
                 other.isCreateSubmitting == isCreateSubmitting) &&
+            (identical(other.isEditSubmitting, isEditSubmitting) ||
+                other.isEditSubmitting == isEditSubmitting) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages));
   }
@@ -945,14 +1385,17 @@ class _$ItemFormStateImpl implements _ItemFormState {
   @override
   int get hashCode => Object.hash(
     runtimeType,
+    item,
     itemNameController,
     stockController,
     priceController,
     failureOrCreateItemOption,
+    failureOrEditItemOption,
     itemGroup,
     selectedCategory,
     isValid,
     isCreateSubmitting,
+    isEditSubmitting,
     showErrorMessages,
   );
 
@@ -967,17 +1410,22 @@ class _$ItemFormStateImpl implements _ItemFormState {
 
 abstract class _ItemFormState implements ItemFormState {
   const factory _ItemFormState({
+    required final Item item,
     required final TextEditingController itemNameController,
     required final TextEditingController stockController,
     required final TextEditingController priceController,
     required final Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
+    required final Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     final String? itemGroup,
     final Category? selectedCategory,
     final bool isValid,
     final bool isCreateSubmitting,
+    final bool isEditSubmitting,
     final bool showErrorMessages,
   }) = _$ItemFormStateImpl;
 
+  @override
+  Item get item;
   @override
   TextEditingController get itemNameController;
   @override
@@ -987,6 +1435,8 @@ abstract class _ItemFormState implements ItemFormState {
   @override
   Option<Either<ItemFailure, Item>> get failureOrCreateItemOption;
   @override
+  Option<Either<ItemFailure, Item>> get failureOrEditItemOption;
+  @override
   String? get itemGroup;
   @override
   Category? get selectedCategory;
@@ -994,6 +1444,8 @@ abstract class _ItemFormState implements ItemFormState {
   bool get isValid;
   @override
   bool get isCreateSubmitting;
+  @override
+  bool get isEditSubmitting;
   @override
   bool get showErrorMessages;
 

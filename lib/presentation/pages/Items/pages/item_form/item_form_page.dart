@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../application/category/category_loader/category_loader_bloc.dart';
 import '../../../../../application/item/item_form/item_form_bloc.dart';
+import '../../../../../domain/item/item.dart';
 import '../../../../../injection.dart';
 import '../../../../components/button/button.dart';
 import '../../../../components/toast/flushbar.dart';
@@ -17,41 +18,65 @@ import 'widgets/stock_field.dart';
 @RoutePage()
 class ItemFormPage extends StatelessWidget implements AutoRouteWrapper {
   final bool isEdit;
-  const ItemFormPage({super.key, required this.isEdit});
+  final Item item;
+  const ItemFormPage({super.key, required this.isEdit, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ItemFormBloc, ItemFormState>(
-      listenWhen: (previous, current) =>
-          previous.failureOrCreateItemOption !=
-          current.failureOrCreateItemOption,
-      listener: (context, state) {
-        state.failureOrCreateItemOption.fold(
-          () {},
-          (either) => either.fold(
-            (f) => AppFlushbar.showItemFailureToast(context, f),
-            (data) {
-              if (isEdit) {
-                AppFlushbar.showSuccess(
-                  context,
-                  'Berhasil mengubah barang ${data.itemName}',
-                );
-              } else {
-                AppFlushbar.showSuccess(
-                  context,
-                  'Berhasil menambah barang ${data.itemName}',
-                );
-              }
-              Future.delayed(Duration(milliseconds: 600), () {
-                context.router.pushAndPopUntil(
-                  ItemRoute(),
-                  predicate: (route) => false, // Clear semua
-                );
-              });
-            },
-          ),
-        );
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<ItemFormBloc, ItemFormState>(
+          listenWhen: (previous, current) =>
+              previous.failureOrCreateItemOption !=
+              current.failureOrCreateItemOption,
+          listener: (context, state) {
+            state.failureOrCreateItemOption.fold(
+              () {},
+              (either) => either.fold(
+                (f) => AppFlushbar.showItemFailureToast(context, f),
+                (data) {
+                  AppFlushbar.showSuccess(
+                    context,
+                    'Berhasil menambah barang ${data.itemName}',
+                  );
+                  Future.delayed(Duration(milliseconds: 600), () {
+                    context.router.pushAndPopUntil(
+                      ItemRoute(),
+                      predicate: (route) => false, // Clear semua
+                    );
+                  });
+                },
+              ),
+            );
+          },
+        ),
+        BlocListener<ItemFormBloc, ItemFormState>(
+          listenWhen: (previous, current) =>
+              previous.failureOrEditItemOption !=
+              current.failureOrEditItemOption,
+          listener: (context, state) {
+            state.failureOrEditItemOption.fold(
+              () {},
+              (either) => either.fold(
+                (f) => AppFlushbar.showItemFailureToast(context, f),
+                (data) {
+                  AppFlushbar.showSuccess(
+                    context,
+                    'Berhasil mengubah barang ${data.itemName}',
+                  );
+
+                  Future.delayed(Duration(milliseconds: 600), () {
+                    context.router.pushAndPopUntil(
+                      ItemRoute(),
+                      predicate: (route) => false, // Clear semua
+                    );
+                  });
+                },
+              ),
+            );
+          },
+        ),
+      ],
       child: BlocBuilder<ItemFormBloc, ItemFormState>(
         builder: (context, state) {
           return Scaffold(
@@ -84,14 +109,24 @@ class ItemFormPage extends StatelessWidget implements AutoRouteWrapper {
               child: AppElevatedButton(
                 onPressed: state.isValid
                     ? () {
-                        if (!state.isCreateSubmitting) {
-                          context.read<ItemFormBloc>().add(
-                            ItemFormEvent.created(),
-                          );
+                        if (isEdit) {
+                          if (!state.isEditSubmitting) {
+                            context.read<ItemFormBloc>().add(
+                              ItemFormEvent.edited(),
+                            );
+                          }
+                        } else {
+                          if (!state.isCreateSubmitting) {
+                            context.read<ItemFormBloc>().add(
+                              ItemFormEvent.created(),
+                            );
+                          }
                         }
                       }
                     : null,
-                isLoading: state.isCreateSubmitting,
+                isLoading: isEdit
+                    ? state.isEditSubmitting
+                    : state.isCreateSubmitting,
                 text: isEdit ? 'Simpan Perubahan' : 'Simpan',
               ),
             ),
@@ -108,7 +143,10 @@ class ItemFormPage extends StatelessWidget implements AutoRouteWrapper {
         create: (context) =>
             getIt<CategoryLoaderBloc>()..add(CategoryLoaderEvent.fetched()),
       ),
-      BlocProvider(create: (context) => getIt<ItemFormBloc>()),
+      BlocProvider(
+        create: (context) =>
+            getIt<ItemFormBloc>()..add(ItemFormEvent.loadItem(item)),
+      ),
     ],
     child: this,
   );

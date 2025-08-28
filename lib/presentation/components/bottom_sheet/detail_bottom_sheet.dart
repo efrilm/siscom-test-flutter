@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/extension/extension.dart';
 import '../../../common/theme/theme.dart';
 import '../../../domain/item/item.dart';
+import '../../router/app_router.gr.dart';
 import '../button/button.dart';
 import '../modal/delete_dialog.dart';
 
@@ -149,7 +150,11 @@ class ItemDetailBottomSheet extends StatelessWidget {
                   Expanded(
                     child: AppElevatedButton(
                       text: 'Edit Barang',
-                      onPressed: () => context.router.maybePop(),
+                      onPressed: () {
+                        context.router.popAndPush(
+                          ItemFormRoute(isEdit: true, item: item),
+                        );
+                      },
                     ),
                   ),
                 ],

@@ -14,4 +14,13 @@ abstract class IItemRepository {
     required String itemGroup,
     required String price,
   });
+
+  Future<Either<ItemFailure, Item>> edit({
+    required String id,
+    required String itemName,
+    required String categoryId,
+    required String stock,
+    required String itemGroup,
+    required String price,
+  });
 }
