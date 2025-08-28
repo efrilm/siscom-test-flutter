@@ -8,6 +8,7 @@ class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final VoidCallback? onTap;
   final ValueChanged<String>? onChanged;
+  final String? Function(String?)? validator;
 
   const AppTextFormField({
     super.key,
@@ -18,6 +19,7 @@ class AppTextFormField extends StatelessWidget {
     this.controller,
     this.onTap,
     this.onChanged,
+    this.validator,
   });
 
   @override
@@ -38,6 +40,7 @@ class AppTextFormField extends StatelessWidget {
           controller: controller,
           onTap: onTap,
           onChanged: onChanged,
+          validator: validator,
           decoration: InputDecoration(hintText: 'Masukkan $title'),
         ),
       ],

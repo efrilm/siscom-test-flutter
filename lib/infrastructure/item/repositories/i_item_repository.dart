@@ -37,4 +37,33 @@ class ItemRepository implements IItemRepository {
       return left(const ItemFailure.unexpectedError());
     }
   }
+
+  @override
+  Future<Either<ItemFailure, Item>> store({
+    required String itemName,
+    required String categoryId,
+    required String stock,
+    required String itemGroup,
+    required String price,
+  }) async {
+    try {
+      final result = await _dataProvider.store(
+        itemName: itemName,
+        categoryId: categoryId,
+        stock: int.tryParse(stock) ?? 0,
+        itemGroup: itemGroup,
+        price: int.tryParse(price) ?? 0,
+      );
+
+      if (result.hasError) {
+        return left(result.error!);
+      }
+
+      final auth = result.data!.toDomain();
+      return right(auth);
+    } catch (e, s) {
+      log('storeItemError', name: _logName, error: e, stackTrace: s);
+      return left(const ItemFailure.unexpectedError());
+    }
+  }
 }

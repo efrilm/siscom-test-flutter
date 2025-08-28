@@ -16,6 +16,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import 'package:siscom_test_flutter/application/category/category_loader/category_loader_bloc.dart'
     as _i552;
+import 'package:siscom_test_flutter/application/item/item_form/item_form_bloc.dart'
+    as _i636;
 import 'package:siscom_test_flutter/application/item/item_loader/item_loader_bloc.dart'
     as _i777;
 import 'package:siscom_test_flutter/common/api/api_client.dart' as _i234;
@@ -86,6 +88,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i777.ItemLoaderBloc>(
       () => _i777.ItemLoaderBloc(gh<_i348.IItemRepository>()),
+    );
+    gh.factory<_i636.ItemFormBloc>(
+      () => _i636.ItemFormBloc(gh<_i348.IItemRepository>()),
     );
     return this;
   }

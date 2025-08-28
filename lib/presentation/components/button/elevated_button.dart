@@ -9,6 +9,7 @@ class AppElevatedButton extends StatelessWidget {
     this.width = double.infinity,
     this.backgroundColor,
     this.textColor,
+    this.isLoading = false,
   });
 
   final String text;
@@ -17,6 +18,7 @@ class AppElevatedButton extends StatelessWidget {
   final double width;
   final Color? backgroundColor;
   final Color? textColor;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +28,32 @@ class AppElevatedButton extends StatelessWidget {
         backgroundColor: backgroundColor ?? AppColor.primary,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
-      child: Text(
-        text,
-        style: AppStyle.md.copyWith(
-          fontWeight: FontWeight.w500,
-          color: textColor ?? AppColor.white,
-        ),
-      ),
+      child: isLoading
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 16,
+                  height: 16,
+                  child: CircularProgressIndicator(color: AppColor.white),
+                ),
+                SizedBox(width: 8),
+                Text(
+                  'Loading...',
+                  style: AppStyle.md.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: textColor ?? AppColor.white,
+                  ),
+                ),
+              ],
+            )
+          : Text(
+              text,
+              style: AppStyle.md.copyWith(
+                fontWeight: FontWeight.w500,
+                color: textColor ?? AppColor.white,
+              ),
+            ),
     );
   }
 }

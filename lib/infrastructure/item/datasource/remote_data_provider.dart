@@ -46,4 +46,38 @@ class ItemRemoteDataProvider {
       return DC.error(ItemFailure.serverError(e));
     }
   }
+
+  Future<DC<ItemFailure, ItemDto>> store({
+    required String itemName,
+    required String categoryId,
+    required int stock,
+    required String itemGroup,
+    required int price,
+  }) async {
+    try {
+      final response = await _apiClient.post(
+        ApiPath.item,
+        data: {
+          'item_name': itemName,
+          'category_id': categoryId,
+          'stock': stock,
+          'item_group': itemGroup,
+          'price': price,
+        },
+      );
+
+      if (response.data['success'] == false) {
+        return DC.error(
+          ItemFailure.dynamicErrorMessage(response.data['message']),
+        );
+      }
+
+      final dto = ItemDto.fromJson(response.data['data']);
+
+      return DC.data(dto);
+    } on ApiFailure catch (e, s) {
+      log('storeItemError', name: _logName, error: e, stackTrace: s);
+      return DC.error(ItemFailure.serverError(e));
+    }
+  }
 }

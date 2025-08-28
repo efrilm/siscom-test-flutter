@@ -6,4 +6,12 @@ abstract class IItemRepository {
     int limit = 1,
     String? search,
   });
+
+  Future<Either<ItemFailure, Item>> store({
+    required String itemName,
+    required String categoryId,
+    required String stock,
+    required String itemGroup,
+    required String price,
+  });
 }
