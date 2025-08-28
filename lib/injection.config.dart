@@ -16,6 +16,8 @@ import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import 'package:siscom_test_flutter/application/category/category_loader/category_loader_bloc.dart'
     as _i552;
+import 'package:siscom_test_flutter/application/item/item_loader/item_loader_bloc.dart'
+    as _i777;
 import 'package:siscom_test_flutter/common/api/api_client.dart' as _i234;
 import 'package:siscom_test_flutter/common/di/di_auto_route.dart' as _i1057;
 import 'package:siscom_test_flutter/common/di/di_connectivity.dart' as _i314;
@@ -25,11 +27,16 @@ import 'package:siscom_test_flutter/common/di/di_shared_preferences.dart'
 import 'package:siscom_test_flutter/common/network/network_client.dart'
     as _i848;
 import 'package:siscom_test_flutter/domain/category/category.dart' as _i767;
+import 'package:siscom_test_flutter/domain/item/item.dart' as _i348;
 import 'package:siscom_test_flutter/env.dart' as _i273;
 import 'package:siscom_test_flutter/infrastructure/category/datasource/remote_data_provider.dart'
     as _i137;
 import 'package:siscom_test_flutter/infrastructure/category/repositories/category_repository.dart'
     as _i60;
+import 'package:siscom_test_flutter/infrastructure/item/datasource/remote_data_provider.dart'
+    as _i668;
+import 'package:siscom_test_flutter/infrastructure/item/repositories/i_item_repository.dart'
+    as _i321;
 import 'package:siscom_test_flutter/presentation/router/app_router.dart'
     as _i247;
 
@@ -65,11 +72,20 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i137.CategoryRemoteDataProvider>(
       () => _i137.CategoryRemoteDataProvider(gh<_i234.ApiClient>()),
     );
+    gh.factory<_i668.ItemRemoteDataProvider>(
+      () => _i668.ItemRemoteDataProvider(gh<_i234.ApiClient>()),
+    );
     gh.factory<_i767.ICategoryRepository>(
       () => _i60.CategoryRepository(gh<_i137.CategoryRemoteDataProvider>()),
     );
+    gh.factory<_i348.IItemRepository>(
+      () => _i321.ItemRepository(gh<_i668.ItemRemoteDataProvider>()),
+    );
     gh.factory<_i552.CategoryLoaderBloc>(
       () => _i552.CategoryLoaderBloc(gh<_i767.ICategoryRepository>()),
+    );
+    gh.factory<_i777.ItemLoaderBloc>(
+      () => _i777.ItemLoaderBloc(gh<_i348.IItemRepository>()),
     );
     return this;
   }

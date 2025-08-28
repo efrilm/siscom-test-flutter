@@ -39,7 +39,9 @@ class ItemFormRoute extends _i5.PageRouteInfo<ItemFormRouteArgs> {
     name,
     builder: (data) {
       final args = data.argsAs<ItemFormRouteArgs>();
-      return _i1.ItemFormPage(key: args.key, isEdit: args.isEdit);
+      return _i5.WrappedRoute(
+        child: _i1.ItemFormPage(key: args.key, isEdit: args.isEdit),
+      );
     },
   );
 }
@@ -68,7 +70,7 @@ class ItemRoute extends _i5.PageRouteInfo<void> {
   static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i2.ItemPage();
+      return _i5.WrappedRoute(child: const _i2.ItemPage());
     },
   );
 }

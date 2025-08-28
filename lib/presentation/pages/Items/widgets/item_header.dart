@@ -5,10 +5,13 @@ import '../../../../common/theme/theme.dart';
 class ItemHeading extends StatelessWidget {
   final bool isEditMode;
   final Function() onEdit;
+  final int total;
+
   const ItemHeading({
     super.key,
     required this.isEditMode,
     required this.onEdit,
+    required this.total,
   });
 
   @override
@@ -20,7 +23,7 @@ class ItemHeading extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '629 Data ditampilkan',
+            '$total Data ditampilkan',
             style: AppStyle.sm.copyWith(color: AppColor.textSecondary),
           ),
           if (!isEditMode)

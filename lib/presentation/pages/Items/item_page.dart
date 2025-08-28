@@ -1,23 +1,36 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../application/item/item_loader/item_loader_bloc.dart';
 import '../../../common/theme/theme.dart';
+import '../../../injection.dart';
 import '../../components/button/button.dart';
+import '../../components/card/empty_card.dart';
 import 'widgets/item_card.dart';
 import '../../components/modal/delete_dialog.dart';
 import '../../router/app_router.gr.dart';
 import 'widgets/item_header.dart';
+import 'widgets/item_shimmer.dart';
 
 @RoutePage()
-class ItemPage extends StatefulWidget {
+class ItemPage extends StatefulWidget implements AutoRouteWrapper {
   const ItemPage({super.key});
 
   @override
   State<ItemPage> createState() => _ItemPageState();
+
+  @override
+  Widget wrappedRoute(BuildContext context) => BlocProvider(
+    create: (context) =>
+        getIt<ItemLoaderBloc>()..add(ItemLoaderEvent.fetched(isRefresh: true)),
+    child: this,
+  );
 }
 
 class _ItemPageState extends State<ItemPage> {
   bool isEditMode = false;
-  Set<int> selectedItems = {};
+  Set<String> selectedItems = {};
+  final ScrollController _scrollController = ScrollController();
 
   // Sample data - replace with your actual data
   final List<Map<String, dynamic>> items = [
@@ -36,7 +49,7 @@ class _ItemPageState extends State<ItemPage> {
     });
   }
 
-  void toggleItemSelection(int itemId) {
+  void toggleItemSelection(String itemId) {
     setState(() {
       if (selectedItems.contains(itemId)) {
         selectedItems.remove(itemId);
@@ -51,7 +64,7 @@ class _ItemPageState extends State<ItemPage> {
       if (selectedItems.length == items.length) {
         selectedItems.clear();
       } else {
-        selectedItems = items.map((item) => item['id'] as int).toSet();
+        selectedItems = items.map((item) => item['id'] as String).toSet();
       }
     });
   }
@@ -109,35 +122,99 @@ class _ItemPageState extends State<ItemPage> {
               ),
             )
           : null,
-      body: Column(
-        children: [
-          ItemHeading(isEditMode: isEditMode, onEdit: () => toggleEditMode()),
-          Expanded(
-            child: ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                final item = items[index];
-                return ItemCard(
-                  item: item,
-                  isEditMode: isEditMode,
-                  isSelected: selectedItems.contains(item['id']),
-                  onSelectionChanged: (selected) {
-                    toggleItemSelection(item['id']);
-                  },
-                  onLongPress: () {
-                    if (!isEditMode) {
-                      toggleEditMode();
-                      toggleItemSelection(item['id']);
-                    }
-                  },
+      body: BlocBuilder<ItemLoaderBloc, ItemLoaderState>(
+        builder: (context, itemState) {
+          return NotificationListener<ScrollNotification>(
+            onNotification: (notification) {
+              if (notification is ScrollEndNotification &&
+                  _scrollController.position.extentAfter == 0) {
+                context.read<ItemLoaderBloc>().add(ItemLoaderEvent.fetched());
+                return true;
+              }
+
+              return true;
+            },
+            child: RefreshIndicator(
+              backgroundColor: AppColor.white,
+              color: AppColor.primary,
+              onRefresh: () async {
+                context.read<ItemLoaderBloc>().add(
+                  ItemLoaderEvent.fetched(isRefresh: true),
                 );
               },
+              child: itemState.failureOptionItem.fold(
+                () => CustomScrollView(
+                  controller: _scrollController,
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  slivers: [
+                    // Header
+                    SliverToBoxAdapter(
+                      child: ItemHeading(
+                        isEditMode: isEditMode,
+                        total: itemState.totalItems,
+                        onEdit: () => toggleEditMode(),
+                      ),
+                    ),
+                    // Items List
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate((context, index) {
+                        final item = itemState.items[index];
+
+                        if (itemState.isFetching) {
+                          return ItemShimmer();
+                        }
+
+                        return ItemCard(
+                          item: item,
+                          isEditMode: isEditMode,
+                          isSelected: selectedItems.contains(item.id),
+                          onSelectionChanged: (selected) {
+                            toggleItemSelection(item.id);
+                          },
+                          onLongPress: () {
+                            if (!isEditMode) {
+                              toggleEditMode();
+                              toggleItemSelection(item.id);
+                            }
+                          },
+                        );
+                      }, childCount: itemState.items.length),
+                    ),
+                    // Footer info
+                    if (!isEditMode)
+                      SliverToBoxAdapter(child: buildPullToRefreshInfo()),
+                  ],
+                ),
+                (f) => SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  child: Column(
+                    children: [
+                      ItemHeading(
+                        isEditMode: isEditMode,
+                        total: itemState.totalItems,
+                        onEdit: () => toggleEditMode(),
+                      ),
+                      f.maybeMap(
+                        orElse: () => EmptyCard(title: 'Tidak ada data'),
+                        empty: (value) => EmptyCard(
+                          title: 'Tidak ada data',
+                          subtitle: 'Silakan tambahkan barang baru',
+                          icon: Icons.shopping_cart,
+                          buttonText: 'Tambah Barang',
+                          onPressed: () =>
+                              context.router.push(ItemFormRoute(isEdit: false)),
+                        ),
+                      ),
+                      if (!isEditMode) buildPullToRefreshInfo(),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-          if (!isEditMode) buildPullToRefreshInfo(),
-          if (isEditMode) buildBottomActionBar(),
-        ],
+          );
+        },
       ),
+      bottomNavigationBar: isEditMode ? buildBottomActionBar() : null,
     );
   }
 

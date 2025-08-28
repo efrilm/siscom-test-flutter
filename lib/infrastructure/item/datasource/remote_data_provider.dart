@@ -1,0 +1,49 @@
+import 'dart:developer';
+
+import 'package:data_channel/data_channel.dart';
+import 'package:injectable/injectable.dart';
+
+import '../../../common/api/api_client.dart';
+import '../../../common/api/api_failure.dart';
+import '../../../common/url/api_path.dart';
+import '../../../domain/item/item.dart';
+import '../item_dtos.dart';
+
+@injectable
+class ItemRemoteDataProvider {
+  final ApiClient _apiClient;
+  final String _logName = 'ItemRemoteDataProvider';
+
+  ItemRemoteDataProvider(this._apiClient);
+
+  Future<DC<ItemFailure, ItemListDto>> fetch({
+    int page = 1,
+    int limit = 10,
+    String? search,
+  }) async {
+    try {
+      Map<String, dynamic> params = {'page': page, 'limit': limit};
+
+      if (search != null) {
+        params['search'] = search;
+      }
+
+      final response = await _apiClient.get(ApiPath.item, params: params);
+
+      if (response.data['data'] == null) {
+        return DC.error(ItemFailure.empty());
+      }
+
+      if ((response.data['data']['data'] as List).isEmpty) {
+        return DC.error(ItemFailure.empty());
+      }
+
+      final dto = ItemListDto.fromJson(response.data['data']);
+
+      return DC.data(dto);
+    } on ApiFailure catch (e, s) {
+      log('fetchItemError', name: _logName, error: e, stackTrace: s);
+      return DC.error(ItemFailure.serverError(e));
+    }
+  }
+}

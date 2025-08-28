@@ -1,15 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import '../../../common/extension/extension.dart';
 import '../../../common/theme/theme.dart';
+import '../../../domain/item/item.dart';
 import '../button/button.dart';
 import '../modal/delete_dialog.dart';
 
 class ItemDetailBottomSheet extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final Item item;
 
   const ItemDetailBottomSheet({super.key, required this.item});
 
-  static void show(BuildContext context, Map<String, dynamic> item) {
+  static void show(BuildContext context, Item item) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -84,10 +86,14 @@ class ItemDetailBottomSheet extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        _buildDetailRow('Nama barang', '5200'),
-                        _buildDetailRow('Kategori', '5200'),
-                        _buildDetailRow('Kelompok', '5200'),
-                        _buildDetailRow('Stok', '5200', isLast: true),
+                        _buildDetailRow('Nama barang', item.itemName),
+                        _buildDetailRow('Kategori', item.category.name),
+                        _buildDetailRow('Kelompok', item.itemGroup),
+                        _buildDetailRow(
+                          'Stok',
+                          item.stock.toString(),
+                          isLast: true,
+                        ),
                       ],
                     ),
                   ),
@@ -111,7 +117,7 @@ class ItemDetailBottomSheet extends StatelessWidget {
                         SizedBox(height: 8),
                         Expanded(
                           child: Text(
-                            'Rp. ${item['price'] ?? 1000000}',
+                            item.price.currencyFormatRp,
                             style: AppStyle.md.copyWith(
                               fontWeight: FontWeight.w500,
                             ),
@@ -171,11 +177,14 @@ class ItemDetailBottomSheet extends StatelessWidget {
         children: [
           Text(label, style: AppStyle.md.copyWith(fontWeight: FontWeight.w500)),
           SizedBox(width: 8),
-          Text(
-            value,
-            style: AppStyle.md.copyWith(
-              color: AppColor.textSecondary,
-              fontWeight: FontWeight.w500,
+          Expanded(
+            child: Text(
+              value,
+              style: AppStyle.md.copyWith(
+                color: AppColor.textSecondary,
+                fontWeight: FontWeight.w500,
+              ),
+              textAlign: TextAlign.end,
             ),
           ),
         ],

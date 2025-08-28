@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import '../../../../common/extension/extension.dart';
 import '../../../../common/theme/theme.dart';
+import '../../../../domain/item/item.dart';
 import '../../../components/bottom_sheet/detail_bottom_sheet.dart';
 
 class ItemCard extends StatelessWidget {
-  final Map<String, dynamic> item;
+  final Item item;
   final bool isEditMode;
   final bool isSelected;
   final ValueChanged<bool?>? onSelectionChanged;
@@ -45,21 +47,21 @@ class ItemCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    item['name'] ?? 'Nama Barang',
+                    item.itemName,
                     style: AppStyle.md.copyWith(fontWeight: FontWeight.w500),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'Stok : ${item['stock'] ?? 35}',
+                    'Stok : ${item.stock}',
                     style: AppStyle.sm.copyWith(color: AppColor.textSecondary),
                   ),
                 ],
               ),
             ),
             Text(
-              "Rp. ${item['price'] ?? 100000}",
+              item.price.currencyFormatRp,
               style: AppStyle.md.copyWith(fontWeight: FontWeight.w500),
             ),
           ],

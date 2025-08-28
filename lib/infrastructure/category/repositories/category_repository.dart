@@ -14,17 +14,9 @@ class CategoryRepository implements ICategoryRepository {
   CategoryRepository(this._dataProvider);
 
   @override
-  Future<Either<CategoryFailure, List<Category>>> get({
-    int page = 1,
-    int limit = 20,
-    bool isActive = true,
-  }) async {
+  Future<Either<CategoryFailure, List<Category>>> get() async {
     try {
-      final result = await _dataProvider.fetch(
-        page: page,
-        limit: limit,
-        isActive: isActive,
-      );
+      final result = await _dataProvider.fetch();
 
       if (result.hasError) {
         return left(result.error!);

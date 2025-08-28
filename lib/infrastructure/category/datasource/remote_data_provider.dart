@@ -16,16 +16,9 @@ class CategoryRemoteDataProvider {
 
   CategoryRemoteDataProvider(this._apiClient);
 
-  Future<DC<CategoryFailure, List<CategoryDto>>> fetch({
-    int page = 1,
-    int limit = 20,
-    bool isActive = true,
-  }) async {
+  Future<DC<CategoryFailure, List<CategoryDto>>> fetch() async {
     try {
-      final response = await _apiClient.get(
-        ApiPath.category,
-        params: {'page': page, 'limit': limit, 'is_active': isActive},
-      );
+      final response = await _apiClient.get(ApiPath.category);
 
       if (response.data['data'] == null) {
         return DC.error(CategoryFailure.empty());
