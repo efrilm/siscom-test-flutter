@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import '../../../application/item/item_form/item_form_bloc.dart';
 import '../../../application/item/item_loader/item_loader_bloc.dart';
 import '../../../common/theme/theme.dart';
@@ -47,6 +48,28 @@ class _ItemPageState extends State<ItemPage> {
   Widget build(BuildContext context) {
     return MultiBlocListener(
       listeners: [
+        BlocListener<ItemFormBloc, ItemFormState>(
+          listenWhen: (previous, current) =>
+              previous.isDeleteSubmitting != current.isDeleteSubmitting,
+          listener: (context, state) {
+            if (state.isDeleteSubmitting) {
+              context.loaderOverlay.show();
+            } else {
+              context.loaderOverlay.hide();
+            }
+          },
+        ),
+        BlocListener<ItemFormBloc, ItemFormState>(
+          listenWhen: (previous, current) =>
+              previous.isBulkDeleteSubmitting != current.isBulkDeleteSubmitting,
+          listener: (context, state) {
+            if (state.isBulkDeleteSubmitting) {
+              context.loaderOverlay.show();
+            } else {
+              context.loaderOverlay.hide();
+            }
+          },
+        ),
         BlocListener<ItemFormBloc, ItemFormState>(
           listenWhen: (previous, current) =>
               previous.failureOrDeleteItemOption !=
