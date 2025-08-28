@@ -33,5 +33,25 @@ class ThemeApp {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColor.borderSecondary),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColor.borderSecondary),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColor.danger),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColor.primary),
+      ),
+      hintStyle: AppStyle.md.copyWith(color: AppColor.textSecondary),
+    ),
   );
 }

@@ -4,6 +4,7 @@ import '../../../common/theme/theme.dart';
 import '../../components/button/button.dart';
 import '../../components/card/item_card.dart';
 import '../../components/modal/delete_dialog.dart';
+import '../../router/app_router.gr.dart';
 import 'widgets/item_header.dart';
 
 @RoutePage()
@@ -87,7 +88,8 @@ class _ItemPageState extends State<ItemPage> {
       ),
       floatingActionButton: !isEditMode
           ? FloatingActionButton.extended(
-              onPressed: () {},
+              onPressed: () =>
+                  context.router.push(ItemFormRoute(isEdit: false)),
               backgroundColor: AppColor.primary,
               foregroundColor: AppColor.white,
               elevation: 8,
