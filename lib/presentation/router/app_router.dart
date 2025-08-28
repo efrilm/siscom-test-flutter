@@ -5,7 +5,10 @@ import 'app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        // Splash
-        AutoRoute(page: SplashRoute.page, initial: true),
-      ];
+    // Splash
+    AutoRoute(page: SplashRoute.page, initial: true),
+
+    // Items
+    AutoRoute(page: ItemRoute.page),
+  ];
 }

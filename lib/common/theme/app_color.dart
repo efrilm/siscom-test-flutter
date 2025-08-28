@@ -5,6 +5,12 @@ class AppColor {
 
   static Color bgSecondary = Color(0xFFF1F4F9);
 
+  static Color borderPrimary = Color(0xFFE2E8F0);
+  static Color borderSecondary = Color(0xFFCBD5E0);
+
+  static Color white = Color(0xFFFFFFFF);
+  static Color black = Color(0xFF000000);
+
   static Color success = Color.fromARGB(255, 3, 167, 33);
   static Color danger = Color(0xFFFF463D);
   static Color info = Color(0xFF2F80ED);

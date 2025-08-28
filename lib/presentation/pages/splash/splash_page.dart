@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/theme/theme.dart';
 import '../../components/assets/assets.gen.dart';
+import '../../router/app_router.gr.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -74,7 +75,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   }
 
   void _navigateToMainScreen() {
-    Future.delayed(Duration(milliseconds: 3000), () {});
+    Future.delayed(Duration(milliseconds: 3000), () {
+      context.router.replace(const ItemRoute());
+    });
   }
 
   @override
