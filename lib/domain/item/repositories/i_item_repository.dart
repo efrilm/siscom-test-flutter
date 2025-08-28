@@ -25,4 +25,5 @@ abstract class IItemRepository {
   });
 
   Future<Either<ItemFailure, Unit>> delete({required String id});
+  Future<Either<ItemFailure, Unit>> bulkDelete({required List<String> ids});
 }

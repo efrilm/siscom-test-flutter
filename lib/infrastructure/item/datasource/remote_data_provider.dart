@@ -133,4 +133,24 @@ class ItemRemoteDataProvider {
       return DC.error(ItemFailure.serverError(e));
     }
   }
+
+  Future<DC<ItemFailure, Unit>> bulkDestroy({required List<String> ids}) async {
+    try {
+      final response = await _apiClient.delete(
+        ApiPath.item,
+        data: {'ids': ids},
+      );
+
+      if (response.data['success'] == false) {
+        return DC.error(
+          ItemFailure.dynamicErrorMessage(response.data['message']),
+        );
+      }
+
+      return DC.data(unit);
+    } on ApiFailure catch (e, s) {
+      log('destroyItemError', name: _logName, error: e, stackTrace: s);
+      return DC.error(ItemFailure.serverError(e));
+    }
+  }
 }

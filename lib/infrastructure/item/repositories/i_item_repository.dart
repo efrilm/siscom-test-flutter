@@ -113,4 +113,22 @@ class ItemRepository implements IItemRepository {
       return left(const ItemFailure.unexpectedError());
     }
   }
+
+  @override
+  Future<Either<ItemFailure, Unit>> bulkDelete({
+    required List<String> ids,
+  }) async {
+    try {
+      final result = await _dataProvider.bulkDestroy(ids: ids);
+
+      if (result.hasError) {
+        return left(result.error!);
+      }
+
+      return right(unit);
+    } catch (e, s) {
+      log('deleteItemError', name: _logName, error: e, stackTrace: s);
+      return left(const ItemFailure.unexpectedError());
+    }
+  }
 }

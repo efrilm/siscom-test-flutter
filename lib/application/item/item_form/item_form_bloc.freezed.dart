@@ -23,9 +23,13 @@ mixin _$ItemFormEvent {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -33,9 +37,13 @@ mixin _$ItemFormEvent {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -43,9 +51,13 @@ mixin _$ItemFormEvent {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,9 +66,13 @@ mixin _$ItemFormEvent {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -64,9 +80,13 @@ mixin _$ItemFormEvent {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -74,9 +94,13 @@ mixin _$ItemFormEvent {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -189,9 +213,13 @@ class _$LoadItemImpl implements _LoadItem {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return loadItem(item);
   }
@@ -203,9 +231,13 @@ class _$LoadItemImpl implements _LoadItem {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return loadItem?.call(item);
   }
@@ -217,9 +249,13 @@ class _$LoadItemImpl implements _LoadItem {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (loadItem != null) {
@@ -235,9 +271,13 @@ class _$LoadItemImpl implements _LoadItem {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return loadItem(this);
   }
@@ -249,9 +289,13 @@ class _$LoadItemImpl implements _LoadItem {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return loadItem?.call(this);
   }
@@ -263,9 +307,13 @@ class _$LoadItemImpl implements _LoadItem {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (loadItem != null) {
@@ -334,9 +382,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return isValidChanged();
   }
@@ -348,9 +400,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return isValidChanged?.call();
   }
@@ -362,9 +418,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -380,9 +440,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return isValidChanged(this);
   }
@@ -394,9 +458,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return isValidChanged?.call(this);
   }
@@ -408,9 +476,13 @@ class _$IsValidChangedImpl implements _IsValidChanged {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (isValidChanged != null) {
@@ -514,9 +586,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return categoryChanged(category);
   }
@@ -528,9 +604,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return categoryChanged?.call(category);
   }
@@ -542,9 +622,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -560,9 +644,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return categoryChanged(this);
   }
@@ -574,9 +662,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return categoryChanged?.call(this);
   }
@@ -588,9 +680,13 @@ class _$CategoryChangedImpl implements _CategoryChanged {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (categoryChanged != null) {
@@ -691,9 +787,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return itemGroupChanged(itemGroup);
   }
@@ -705,9 +805,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return itemGroupChanged?.call(itemGroup);
   }
@@ -719,9 +823,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -737,9 +845,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return itemGroupChanged(this);
   }
@@ -751,9 +863,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return itemGroupChanged?.call(this);
   }
@@ -765,9 +881,13 @@ class _$ItemGroupChangedImpl implements _ItemGroupChanged {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (itemGroupChanged != null) {
@@ -787,6 +907,572 @@ abstract class _ItemGroupChanged implements ItemFormEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ItemGroupChangedImplCopyWith<_$ItemGroupChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ToggleBulkDeleteImplCopyWith<$Res> {
+  factory _$$ToggleBulkDeleteImplCopyWith(
+    _$ToggleBulkDeleteImpl value,
+    $Res Function(_$ToggleBulkDeleteImpl) then,
+  ) = __$$ToggleBulkDeleteImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ToggleBulkDeleteImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$ToggleBulkDeleteImpl>
+    implements _$$ToggleBulkDeleteImplCopyWith<$Res> {
+  __$$ToggleBulkDeleteImplCopyWithImpl(
+    _$ToggleBulkDeleteImpl _value,
+    $Res Function(_$ToggleBulkDeleteImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ToggleBulkDeleteImpl implements _ToggleBulkDelete {
+  const _$ToggleBulkDeleteImpl();
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.toggleBulkDelete()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ToggleBulkDeleteImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
+    required TResult Function() created,
+    required TResult Function() edited,
+    required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
+  }) {
+    return toggleBulkDelete();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
+  }) {
+    return toggleBulkDelete?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
+    TResult Function()? created,
+    TResult Function()? edited,
+    TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (toggleBulkDelete != null) {
+      return toggleBulkDelete();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
+  }) {
+    return toggleBulkDelete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
+  }) {
+    return toggleBulkDelete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (toggleBulkDelete != null) {
+      return toggleBulkDelete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ToggleBulkDelete implements ItemFormEvent {
+  const factory _ToggleBulkDelete() = _$ToggleBulkDeleteImpl;
+}
+
+/// @nodoc
+abstract class _$$ToggleItemSelectionImplCopyWith<$Res> {
+  factory _$$ToggleItemSelectionImplCopyWith(
+    _$ToggleItemSelectionImpl value,
+    $Res Function(_$ToggleItemSelectionImpl) then,
+  ) = __$$ToggleItemSelectionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String itemId});
+}
+
+/// @nodoc
+class __$$ToggleItemSelectionImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$ToggleItemSelectionImpl>
+    implements _$$ToggleItemSelectionImplCopyWith<$Res> {
+  __$$ToggleItemSelectionImplCopyWithImpl(
+    _$ToggleItemSelectionImpl _value,
+    $Res Function(_$ToggleItemSelectionImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? itemId = null}) {
+    return _then(
+      _$ToggleItemSelectionImpl(
+        null == itemId
+            ? _value.itemId
+            : itemId // ignore: cast_nullable_to_non_nullable
+                  as String,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$ToggleItemSelectionImpl implements _ToggleItemSelection {
+  const _$ToggleItemSelectionImpl(this.itemId);
+
+  @override
+  final String itemId;
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.toggleItemSelection(itemId: $itemId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ToggleItemSelectionImpl &&
+            (identical(other.itemId, itemId) || other.itemId == itemId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, itemId);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ToggleItemSelectionImplCopyWith<_$ToggleItemSelectionImpl> get copyWith =>
+      __$$ToggleItemSelectionImplCopyWithImpl<_$ToggleItemSelectionImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
+    required TResult Function() created,
+    required TResult Function() edited,
+    required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
+  }) {
+    return toggleItemSelection(itemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
+  }) {
+    return toggleItemSelection?.call(itemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
+    TResult Function()? created,
+    TResult Function()? edited,
+    TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (toggleItemSelection != null) {
+      return toggleItemSelection(itemId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
+  }) {
+    return toggleItemSelection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
+  }) {
+    return toggleItemSelection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (toggleItemSelection != null) {
+      return toggleItemSelection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ToggleItemSelection implements ItemFormEvent {
+  const factory _ToggleItemSelection(final String itemId) =
+      _$ToggleItemSelectionImpl;
+
+  String get itemId;
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ToggleItemSelectionImplCopyWith<_$ToggleItemSelectionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectAllItemsImplCopyWith<$Res> {
+  factory _$$SelectAllItemsImplCopyWith(
+    _$SelectAllItemsImpl value,
+    $Res Function(_$SelectAllItemsImpl) then,
+  ) = __$$SelectAllItemsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Item> items});
+}
+
+/// @nodoc
+class __$$SelectAllItemsImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$SelectAllItemsImpl>
+    implements _$$SelectAllItemsImplCopyWith<$Res> {
+  __$$SelectAllItemsImplCopyWithImpl(
+    _$SelectAllItemsImpl _value,
+    $Res Function(_$SelectAllItemsImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? items = null}) {
+    return _then(
+      _$SelectAllItemsImpl(
+        null == items
+            ? _value._items
+            : items // ignore: cast_nullable_to_non_nullable
+                  as List<Item>,
+      ),
+    );
+  }
+}
+
+/// @nodoc
+
+class _$SelectAllItemsImpl implements _SelectAllItems {
+  const _$SelectAllItemsImpl(final List<Item> items) : _items = items;
+
+  final List<Item> _items;
+  @override
+  List<Item> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.selectAllItems(items: $items)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectAllItemsImpl &&
+            const DeepCollectionEquality().equals(other._items, _items));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectAllItemsImplCopyWith<_$SelectAllItemsImpl> get copyWith =>
+      __$$SelectAllItemsImplCopyWithImpl<_$SelectAllItemsImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
+    required TResult Function() created,
+    required TResult Function() edited,
+    required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
+  }) {
+    return selectAllItems(items);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
+  }) {
+    return selectAllItems?.call(items);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
+    TResult Function()? created,
+    TResult Function()? edited,
+    TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (selectAllItems != null) {
+      return selectAllItems(items);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
+  }) {
+    return selectAllItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
+  }) {
+    return selectAllItems?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (selectAllItems != null) {
+      return selectAllItems(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectAllItems implements ItemFormEvent {
+  const factory _SelectAllItems(final List<Item> items) = _$SelectAllItemsImpl;
+
+  List<Item> get items;
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectAllItemsImplCopyWith<_$SelectAllItemsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -837,9 +1523,13 @@ class _$CreatedImpl implements _Created {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return created();
   }
@@ -851,9 +1541,13 @@ class _$CreatedImpl implements _Created {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return created?.call();
   }
@@ -865,9 +1559,13 @@ class _$CreatedImpl implements _Created {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -883,9 +1581,13 @@ class _$CreatedImpl implements _Created {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return created(this);
   }
@@ -897,9 +1599,13 @@ class _$CreatedImpl implements _Created {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return created?.call(this);
   }
@@ -911,9 +1617,13 @@ class _$CreatedImpl implements _Created {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (created != null) {
@@ -974,9 +1684,13 @@ class _$EditedImpl implements _Edited {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return edited();
   }
@@ -988,9 +1702,13 @@ class _$EditedImpl implements _Edited {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return edited?.call();
   }
@@ -1002,9 +1720,13 @@ class _$EditedImpl implements _Edited {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (edited != null) {
@@ -1020,9 +1742,13 @@ class _$EditedImpl implements _Edited {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return edited(this);
   }
@@ -1034,9 +1760,13 @@ class _$EditedImpl implements _Edited {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return edited?.call(this);
   }
@@ -1048,9 +1778,13 @@ class _$EditedImpl implements _Edited {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (edited != null) {
@@ -1138,9 +1872,13 @@ class _$DeletedImpl implements _Deleted {
     required TResult Function() isValidChanged,
     required TResult Function(Category category) categoryChanged,
     required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
     required TResult Function() created,
     required TResult Function() edited,
     required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
   }) {
     return deleted(id);
   }
@@ -1152,9 +1890,13 @@ class _$DeletedImpl implements _Deleted {
     TResult? Function()? isValidChanged,
     TResult? Function(Category category)? categoryChanged,
     TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
     TResult? Function()? created,
     TResult? Function()? edited,
     TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
   }) {
     return deleted?.call(id);
   }
@@ -1166,9 +1908,13 @@ class _$DeletedImpl implements _Deleted {
     TResult Function()? isValidChanged,
     TResult Function(Category category)? categoryChanged,
     TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
     TResult Function()? created,
     TResult Function()? edited,
     TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
     required TResult orElse(),
   }) {
     if (deleted != null) {
@@ -1184,9 +1930,13 @@ class _$DeletedImpl implements _Deleted {
     required TResult Function(_IsValidChanged value) isValidChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
     required TResult Function(_Created value) created,
     required TResult Function(_Edited value) edited,
     required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
   }) {
     return deleted(this);
   }
@@ -1198,9 +1948,13 @@ class _$DeletedImpl implements _Deleted {
     TResult? Function(_IsValidChanged value)? isValidChanged,
     TResult? Function(_CategoryChanged value)? categoryChanged,
     TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
     TResult? Function(_Created value)? created,
     TResult? Function(_Edited value)? edited,
     TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
   }) {
     return deleted?.call(this);
   }
@@ -1212,9 +1966,13 @@ class _$DeletedImpl implements _Deleted {
     TResult Function(_IsValidChanged value)? isValidChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
     TResult Function(_Created value)? created,
     TResult Function(_Edited value)? edited,
     TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
     required TResult orElse(),
   }) {
     if (deleted != null) {
@@ -1237,6 +1995,167 @@ abstract class _Deleted implements ItemFormEvent {
 }
 
 /// @nodoc
+abstract class _$$BulkDeletedImplCopyWith<$Res> {
+  factory _$$BulkDeletedImplCopyWith(
+    _$BulkDeletedImpl value,
+    $Res Function(_$BulkDeletedImpl) then,
+  ) = __$$BulkDeletedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BulkDeletedImplCopyWithImpl<$Res>
+    extends _$ItemFormEventCopyWithImpl<$Res, _$BulkDeletedImpl>
+    implements _$$BulkDeletedImplCopyWith<$Res> {
+  __$$BulkDeletedImplCopyWithImpl(
+    _$BulkDeletedImpl _value,
+    $Res Function(_$BulkDeletedImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ItemFormEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$BulkDeletedImpl implements _BulkDeleted {
+  const _$BulkDeletedImpl();
+
+  @override
+  String toString() {
+    return 'ItemFormEvent.bulkDeleted()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$BulkDeletedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Item item) loadItem,
+    required TResult Function() isValidChanged,
+    required TResult Function(Category category) categoryChanged,
+    required TResult Function(String itemGroup) itemGroupChanged,
+    required TResult Function() toggleBulkDelete,
+    required TResult Function(String itemId) toggleItemSelection,
+    required TResult Function(List<Item> items) selectAllItems,
+    required TResult Function() created,
+    required TResult Function() edited,
+    required TResult Function(String id) deleted,
+    required TResult Function() bulkDeleted,
+  }) {
+    return bulkDeleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Item item)? loadItem,
+    TResult? Function()? isValidChanged,
+    TResult? Function(Category category)? categoryChanged,
+    TResult? Function(String itemGroup)? itemGroupChanged,
+    TResult? Function()? toggleBulkDelete,
+    TResult? Function(String itemId)? toggleItemSelection,
+    TResult? Function(List<Item> items)? selectAllItems,
+    TResult? Function()? created,
+    TResult? Function()? edited,
+    TResult? Function(String id)? deleted,
+    TResult? Function()? bulkDeleted,
+  }) {
+    return bulkDeleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Item item)? loadItem,
+    TResult Function()? isValidChanged,
+    TResult Function(Category category)? categoryChanged,
+    TResult Function(String itemGroup)? itemGroupChanged,
+    TResult Function()? toggleBulkDelete,
+    TResult Function(String itemId)? toggleItemSelection,
+    TResult Function(List<Item> items)? selectAllItems,
+    TResult Function()? created,
+    TResult Function()? edited,
+    TResult Function(String id)? deleted,
+    TResult Function()? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (bulkDeleted != null) {
+      return bulkDeleted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadItem value) loadItem,
+    required TResult Function(_IsValidChanged value) isValidChanged,
+    required TResult Function(_CategoryChanged value) categoryChanged,
+    required TResult Function(_ItemGroupChanged value) itemGroupChanged,
+    required TResult Function(_ToggleBulkDelete value) toggleBulkDelete,
+    required TResult Function(_ToggleItemSelection value) toggleItemSelection,
+    required TResult Function(_SelectAllItems value) selectAllItems,
+    required TResult Function(_Created value) created,
+    required TResult Function(_Edited value) edited,
+    required TResult Function(_Deleted value) deleted,
+    required TResult Function(_BulkDeleted value) bulkDeleted,
+  }) {
+    return bulkDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadItem value)? loadItem,
+    TResult? Function(_IsValidChanged value)? isValidChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult? Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult? Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult? Function(_SelectAllItems value)? selectAllItems,
+    TResult? Function(_Created value)? created,
+    TResult? Function(_Edited value)? edited,
+    TResult? Function(_Deleted value)? deleted,
+    TResult? Function(_BulkDeleted value)? bulkDeleted,
+  }) {
+    return bulkDeleted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadItem value)? loadItem,
+    TResult Function(_IsValidChanged value)? isValidChanged,
+    TResult Function(_CategoryChanged value)? categoryChanged,
+    TResult Function(_ItemGroupChanged value)? itemGroupChanged,
+    TResult Function(_ToggleBulkDelete value)? toggleBulkDelete,
+    TResult Function(_ToggleItemSelection value)? toggleItemSelection,
+    TResult Function(_SelectAllItems value)? selectAllItems,
+    TResult Function(_Created value)? created,
+    TResult Function(_Edited value)? edited,
+    TResult Function(_Deleted value)? deleted,
+    TResult Function(_BulkDeleted value)? bulkDeleted,
+    required TResult orElse(),
+  }) {
+    if (bulkDeleted != null) {
+      return bulkDeleted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BulkDeleted implements ItemFormEvent {
+  const factory _BulkDeleted() = _$BulkDeletedImpl;
+}
+
+/// @nodoc
 mixin _$ItemFormState {
   Item get item => throw _privateConstructorUsedError;
   TextEditingController get itemNameController =>
@@ -1251,13 +2170,18 @@ mixin _$ItemFormState {
       throw _privateConstructorUsedError;
   Option<Either<ItemFailure, Unit>> get failureOrDeleteItemOption =>
       throw _privateConstructorUsedError;
+  Option<Either<ItemFailure, Unit>> get failureOrBulkDeleteItemOption =>
+      throw _privateConstructorUsedError;
+  Set<String> get selectedIds => throw _privateConstructorUsedError;
   String? get itemGroup => throw _privateConstructorUsedError;
   Category? get selectedCategory => throw _privateConstructorUsedError;
   bool get isValid => throw _privateConstructorUsedError;
   bool get isCreateSubmitting => throw _privateConstructorUsedError;
   bool get isEditSubmitting => throw _privateConstructorUsedError;
   bool get isDeleteSubmitting => throw _privateConstructorUsedError;
+  bool get isBulkDeleteSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isBulkDelete => throw _privateConstructorUsedError;
 
   /// Create a copy of ItemFormState
   /// with the given fields replaced by the non-null parameter values.
@@ -1281,13 +2205,17 @@ abstract class $ItemFormStateCopyWith<$Res> {
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
+    Option<Either<ItemFailure, Unit>> failureOrBulkDeleteItemOption,
+    Set<String> selectedIds,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
     bool isEditSubmitting,
     bool isDeleteSubmitting,
+    bool isBulkDeleteSubmitting,
     bool showErrorMessages,
+    bool isBulkDelete,
   });
 
   $ItemCopyWith<$Res> get item;
@@ -1316,13 +2244,17 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
     Object? failureOrCreateItemOption = null,
     Object? failureOrEditItemOption = null,
     Object? failureOrDeleteItemOption = null,
+    Object? failureOrBulkDeleteItemOption = null,
+    Object? selectedIds = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
     Object? isEditSubmitting = null,
     Object? isDeleteSubmitting = null,
+    Object? isBulkDeleteSubmitting = null,
     Object? showErrorMessages = null,
+    Object? isBulkDelete = null,
   }) {
     return _then(
       _value.copyWith(
@@ -1354,6 +2286,14 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
                 ? _value.failureOrDeleteItemOption
                 : failureOrDeleteItemOption // ignore: cast_nullable_to_non_nullable
                       as Option<Either<ItemFailure, Unit>>,
+            failureOrBulkDeleteItemOption: null == failureOrBulkDeleteItemOption
+                ? _value.failureOrBulkDeleteItemOption
+                : failureOrBulkDeleteItemOption // ignore: cast_nullable_to_non_nullable
+                      as Option<Either<ItemFailure, Unit>>,
+            selectedIds: null == selectedIds
+                ? _value.selectedIds
+                : selectedIds // ignore: cast_nullable_to_non_nullable
+                      as Set<String>,
             itemGroup: freezed == itemGroup
                 ? _value.itemGroup
                 : itemGroup // ignore: cast_nullable_to_non_nullable
@@ -1378,9 +2318,17 @@ class _$ItemFormStateCopyWithImpl<$Res, $Val extends ItemFormState>
                 ? _value.isDeleteSubmitting
                 : isDeleteSubmitting // ignore: cast_nullable_to_non_nullable
                       as bool,
+            isBulkDeleteSubmitting: null == isBulkDeleteSubmitting
+                ? _value.isBulkDeleteSubmitting
+                : isBulkDeleteSubmitting // ignore: cast_nullable_to_non_nullable
+                      as bool,
             showErrorMessages: null == showErrorMessages
                 ? _value.showErrorMessages
                 : showErrorMessages // ignore: cast_nullable_to_non_nullable
+                      as bool,
+            isBulkDelete: null == isBulkDelete
+                ? _value.isBulkDelete
+                : isBulkDelete // ignore: cast_nullable_to_non_nullable
                       as bool,
           )
           as $Val,
@@ -1429,13 +2377,17 @@ abstract class _$$ItemFormStateImplCopyWith<$Res>
     Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
+    Option<Either<ItemFailure, Unit>> failureOrBulkDeleteItemOption,
+    Set<String> selectedIds,
     String? itemGroup,
     Category? selectedCategory,
     bool isValid,
     bool isCreateSubmitting,
     bool isEditSubmitting,
     bool isDeleteSubmitting,
+    bool isBulkDeleteSubmitting,
     bool showErrorMessages,
+    bool isBulkDelete,
   });
 
   @override
@@ -1465,13 +2417,17 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
     Object? failureOrCreateItemOption = null,
     Object? failureOrEditItemOption = null,
     Object? failureOrDeleteItemOption = null,
+    Object? failureOrBulkDeleteItemOption = null,
+    Object? selectedIds = null,
     Object? itemGroup = freezed,
     Object? selectedCategory = freezed,
     Object? isValid = null,
     Object? isCreateSubmitting = null,
     Object? isEditSubmitting = null,
     Object? isDeleteSubmitting = null,
+    Object? isBulkDeleteSubmitting = null,
     Object? showErrorMessages = null,
+    Object? isBulkDelete = null,
   }) {
     return _then(
       _$ItemFormStateImpl(
@@ -1503,6 +2459,14 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
             ? _value.failureOrDeleteItemOption
             : failureOrDeleteItemOption // ignore: cast_nullable_to_non_nullable
                   as Option<Either<ItemFailure, Unit>>,
+        failureOrBulkDeleteItemOption: null == failureOrBulkDeleteItemOption
+            ? _value.failureOrBulkDeleteItemOption
+            : failureOrBulkDeleteItemOption // ignore: cast_nullable_to_non_nullable
+                  as Option<Either<ItemFailure, Unit>>,
+        selectedIds: null == selectedIds
+            ? _value._selectedIds
+            : selectedIds // ignore: cast_nullable_to_non_nullable
+                  as Set<String>,
         itemGroup: freezed == itemGroup
             ? _value.itemGroup
             : itemGroup // ignore: cast_nullable_to_non_nullable
@@ -1527,9 +2491,17 @@ class __$$ItemFormStateImplCopyWithImpl<$Res>
             ? _value.isDeleteSubmitting
             : isDeleteSubmitting // ignore: cast_nullable_to_non_nullable
                   as bool,
+        isBulkDeleteSubmitting: null == isBulkDeleteSubmitting
+            ? _value.isBulkDeleteSubmitting
+            : isBulkDeleteSubmitting // ignore: cast_nullable_to_non_nullable
+                  as bool,
         showErrorMessages: null == showErrorMessages
             ? _value.showErrorMessages
             : showErrorMessages // ignore: cast_nullable_to_non_nullable
+                  as bool,
+        isBulkDelete: null == isBulkDelete
+            ? _value.isBulkDelete
+            : isBulkDelete // ignore: cast_nullable_to_non_nullable
                   as bool,
       ),
     );
@@ -1547,14 +2519,18 @@ class _$ItemFormStateImpl implements _ItemFormState {
     required this.failureOrCreateItemOption,
     required this.failureOrEditItemOption,
     required this.failureOrDeleteItemOption,
+    required this.failureOrBulkDeleteItemOption,
+    required final Set<String> selectedIds,
     this.itemGroup,
     this.selectedCategory,
     this.isValid = false,
     this.isCreateSubmitting = false,
     this.isEditSubmitting = false,
     this.isDeleteSubmitting = false,
+    this.isBulkDeleteSubmitting = false,
     this.showErrorMessages = false,
-  });
+    this.isBulkDelete = false,
+  }) : _selectedIds = selectedIds;
 
   @override
   final Item item;
@@ -1570,6 +2546,16 @@ class _$ItemFormStateImpl implements _ItemFormState {
   final Option<Either<ItemFailure, Item>> failureOrEditItemOption;
   @override
   final Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption;
+  @override
+  final Option<Either<ItemFailure, Unit>> failureOrBulkDeleteItemOption;
+  final Set<String> _selectedIds;
+  @override
+  Set<String> get selectedIds {
+    if (_selectedIds is EqualUnmodifiableSetView) return _selectedIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_selectedIds);
+  }
+
   @override
   final String? itemGroup;
   @override
@@ -1588,11 +2574,17 @@ class _$ItemFormStateImpl implements _ItemFormState {
   final bool isDeleteSubmitting;
   @override
   @JsonKey()
+  final bool isBulkDeleteSubmitting;
+  @override
+  @JsonKey()
   final bool showErrorMessages;
+  @override
+  @JsonKey()
+  final bool isBulkDelete;
 
   @override
   String toString() {
-    return 'ItemFormState(item: $item, itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, failureOrEditItemOption: $failureOrEditItemOption, failureOrDeleteItemOption: $failureOrDeleteItemOption, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, isEditSubmitting: $isEditSubmitting, isDeleteSubmitting: $isDeleteSubmitting, showErrorMessages: $showErrorMessages)';
+    return 'ItemFormState(item: $item, itemNameController: $itemNameController, stockController: $stockController, priceController: $priceController, failureOrCreateItemOption: $failureOrCreateItemOption, failureOrEditItemOption: $failureOrEditItemOption, failureOrDeleteItemOption: $failureOrDeleteItemOption, failureOrBulkDeleteItemOption: $failureOrBulkDeleteItemOption, selectedIds: $selectedIds, itemGroup: $itemGroup, selectedCategory: $selectedCategory, isValid: $isValid, isCreateSubmitting: $isCreateSubmitting, isEditSubmitting: $isEditSubmitting, isDeleteSubmitting: $isDeleteSubmitting, isBulkDeleteSubmitting: $isBulkDeleteSubmitting, showErrorMessages: $showErrorMessages, isBulkDelete: $isBulkDelete)';
   }
 
   @override
@@ -1622,6 +2614,16 @@ class _$ItemFormStateImpl implements _ItemFormState {
                   failureOrDeleteItemOption,
                 ) ||
                 other.failureOrDeleteItemOption == failureOrDeleteItemOption) &&
+            (identical(
+                  other.failureOrBulkDeleteItemOption,
+                  failureOrBulkDeleteItemOption,
+                ) ||
+                other.failureOrBulkDeleteItemOption ==
+                    failureOrBulkDeleteItemOption) &&
+            const DeepCollectionEquality().equals(
+              other._selectedIds,
+              _selectedIds,
+            ) &&
             (identical(other.itemGroup, itemGroup) ||
                 other.itemGroup == itemGroup) &&
             (identical(other.selectedCategory, selectedCategory) ||
@@ -1633,8 +2635,12 @@ class _$ItemFormStateImpl implements _ItemFormState {
                 other.isEditSubmitting == isEditSubmitting) &&
             (identical(other.isDeleteSubmitting, isDeleteSubmitting) ||
                 other.isDeleteSubmitting == isDeleteSubmitting) &&
+            (identical(other.isBulkDeleteSubmitting, isBulkDeleteSubmitting) ||
+                other.isBulkDeleteSubmitting == isBulkDeleteSubmitting) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages));
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isBulkDelete, isBulkDelete) ||
+                other.isBulkDelete == isBulkDelete));
   }
 
   @override
@@ -1647,13 +2653,17 @@ class _$ItemFormStateImpl implements _ItemFormState {
     failureOrCreateItemOption,
     failureOrEditItemOption,
     failureOrDeleteItemOption,
+    failureOrBulkDeleteItemOption,
+    const DeepCollectionEquality().hash(_selectedIds),
     itemGroup,
     selectedCategory,
     isValid,
     isCreateSubmitting,
     isEditSubmitting,
     isDeleteSubmitting,
+    isBulkDeleteSubmitting,
     showErrorMessages,
+    isBulkDelete,
   );
 
   /// Create a copy of ItemFormState
@@ -1674,13 +2684,18 @@ abstract class _ItemFormState implements ItemFormState {
     required final Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     required final Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     required final Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
+    required final Option<Either<ItemFailure, Unit>>
+    failureOrBulkDeleteItemOption,
+    required final Set<String> selectedIds,
     final String? itemGroup,
     final Category? selectedCategory,
     final bool isValid,
     final bool isCreateSubmitting,
     final bool isEditSubmitting,
     final bool isDeleteSubmitting,
+    final bool isBulkDeleteSubmitting,
     final bool showErrorMessages,
+    final bool isBulkDelete,
   }) = _$ItemFormStateImpl;
 
   @override
@@ -1698,6 +2713,10 @@ abstract class _ItemFormState implements ItemFormState {
   @override
   Option<Either<ItemFailure, Unit>> get failureOrDeleteItemOption;
   @override
+  Option<Either<ItemFailure, Unit>> get failureOrBulkDeleteItemOption;
+  @override
+  Set<String> get selectedIds;
+  @override
   String? get itemGroup;
   @override
   Category? get selectedCategory;
@@ -1710,7 +2729,11 @@ abstract class _ItemFormState implements ItemFormState {
   @override
   bool get isDeleteSubmitting;
   @override
+  bool get isBulkDeleteSubmitting;
+  @override
   bool get showErrorMessages;
+  @override
+  bool get isBulkDelete;
 
   /// Create a copy of ItemFormState
   /// with the given fields replaced by the non-null parameter values.

@@ -158,6 +158,55 @@ class ItemFormBloc extends Bloc<ItemFormEvent, ItemFormState> {
           emit(state.copyWith(isDeleteSubmitting: false));
         }
       },
+      toggleBulkDelete: (e) async {
+        emit(
+          state.copyWith(isBulkDelete: !state.isBulkDelete, selectedIds: {}),
+        );
+      },
+      toggleItemSelection: (e) async {
+        final updatedIds = Set<String>.from(state.selectedIds);
+        if (updatedIds.contains(e.itemId)) {
+          updatedIds.remove(e.itemId);
+        } else {
+          updatedIds.add(e.itemId);
+        }
+
+        emit(state.copyWith(selectedIds: updatedIds));
+      },
+
+      selectAllItems: (e) async {
+        if (state.selectedIds.length == e.items.length) {
+          emit(state.copyWith(selectedIds: {}));
+        } else {
+          final updatedIds = e.items.map((item) => item.id).toSet();
+          emit(state.copyWith(selectedIds: updatedIds));
+        }
+      },
+      bulkDeleted: (e) async {
+        Either<ItemFailure, Unit>? failureOrItem;
+
+        emit(
+          state.copyWith(
+            isBulkDeleteSubmitting: true,
+            failureOrBulkDeleteItemOption: none(),
+          ),
+        );
+
+        if (state.selectedIds.isNotEmpty) {
+          failureOrItem = await _repository.bulkDelete(
+            ids: state.selectedIds.toList(),
+          );
+
+          emit(
+            state.copyWith(
+              isBulkDeleteSubmitting: false,
+              failureOrBulkDeleteItemOption: optionOf(failureOrItem),
+            ),
+          );
+
+          emit(state.copyWith(isBulkDeleteSubmitting: false));
+        }
+      },
     );
   }
 }

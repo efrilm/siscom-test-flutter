@@ -10,13 +10,17 @@ class ItemFormState with _$ItemFormState {
     required Option<Either<ItemFailure, Item>> failureOrCreateItemOption,
     required Option<Either<ItemFailure, Item>> failureOrEditItemOption,
     required Option<Either<ItemFailure, Unit>> failureOrDeleteItemOption,
+    required Option<Either<ItemFailure, Unit>> failureOrBulkDeleteItemOption,
+    required Set<String> selectedIds,
     String? itemGroup,
     Category? selectedCategory,
     @Default(false) bool isValid,
     @Default(false) bool isCreateSubmitting,
     @Default(false) bool isEditSubmitting,
     @Default(false) bool isDeleteSubmitting,
+    @Default(false) bool isBulkDeleteSubmitting,
     @Default(false) bool showErrorMessages,
+    @Default(false) bool isBulkDelete,
   }) = _ItemFormState;
 
   factory ItemFormState.initial() => ItemFormState(
@@ -27,5 +31,7 @@ class ItemFormState with _$ItemFormState {
     item: Item.empty(),
     failureOrEditItemOption: none(),
     failureOrDeleteItemOption: none(),
+    failureOrBulkDeleteItemOption: none(),
+    selectedIds: {},
   );
 }
