@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../../common/theme/theme.dart';
 import '../../components/button/button.dart';
-import '../../components/card/item_card.dart';
+import 'widgets/item_card.dart';
 import '../../components/modal/delete_dialog.dart';
 import '../../router/app_router.gr.dart';
 import 'widgets/item_header.dart';
@@ -73,7 +73,10 @@ class _ItemPageState extends State<ItemPage> {
             : null,
         actions: [
           if (!isEditMode)
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+            IconButton(
+              onPressed: () => context.router.push(ItemSearchRoute()),
+              icon: const Icon(Icons.search),
+            ),
           if (isEditMode && selectedItems.isNotEmpty)
             TextButton(
               onPressed: selectAllItems,

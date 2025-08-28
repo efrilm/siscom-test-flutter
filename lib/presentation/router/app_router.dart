@@ -11,5 +11,6 @@ class AppRouter extends RootStackRouter {
     // Items
     AutoRoute(page: ItemRoute.page),
     AutoRoute(page: ItemFormRoute.page),
+    AutoRoute(page: ItemSearchRoute.page),
   ];
 }

@@ -9,22 +9,24 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i4;
-import 'package:flutter/material.dart' as _i5;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
 import 'package:siscom_test_flutter/presentation/pages/Items/item_page.dart'
     as _i2;
 import 'package:siscom_test_flutter/presentation/pages/Items/pages/item_form/item_form_page.dart'
     as _i1;
-import 'package:siscom_test_flutter/presentation/pages/splash/splash_page.dart'
+import 'package:siscom_test_flutter/presentation/pages/Items/pages/item_search/item_search_page.dart'
     as _i3;
+import 'package:siscom_test_flutter/presentation/pages/splash/splash_page.dart'
+    as _i4;
 
 /// generated route for
 /// [_i1.ItemFormPage]
-class ItemFormRoute extends _i4.PageRouteInfo<ItemFormRouteArgs> {
+class ItemFormRoute extends _i5.PageRouteInfo<ItemFormRouteArgs> {
   ItemFormRoute({
-    _i5.Key? key,
+    _i6.Key? key,
     required bool isEdit,
-    List<_i4.PageRouteInfo>? children,
+    List<_i5.PageRouteInfo>? children,
   }) : super(
          ItemFormRoute.name,
          args: ItemFormRouteArgs(key: key, isEdit: isEdit),
@@ -33,7 +35,7 @@ class ItemFormRoute extends _i4.PageRouteInfo<ItemFormRouteArgs> {
 
   static const String name = 'ItemFormRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
       final args = data.argsAs<ItemFormRouteArgs>();
@@ -45,7 +47,7 @@ class ItemFormRoute extends _i4.PageRouteInfo<ItemFormRouteArgs> {
 class ItemFormRouteArgs {
   const ItemFormRouteArgs({this.key, required this.isEdit});
 
-  final _i5.Key? key;
+  final _i6.Key? key;
 
   final bool isEdit;
 
@@ -57,13 +59,13 @@ class ItemFormRouteArgs {
 
 /// generated route for
 /// [_i2.ItemPage]
-class ItemRoute extends _i4.PageRouteInfo<void> {
-  const ItemRoute({List<_i4.PageRouteInfo>? children})
+class ItemRoute extends _i5.PageRouteInfo<void> {
+  const ItemRoute({List<_i5.PageRouteInfo>? children})
     : super(ItemRoute.name, initialChildren: children);
 
   static const String name = 'ItemRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
       return const _i2.ItemPage();
@@ -72,17 +74,33 @@ class ItemRoute extends _i4.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.SplashPage]
-class SplashRoute extends _i4.PageRouteInfo<void> {
-  const SplashRoute({List<_i4.PageRouteInfo>? children})
+/// [_i3.ItemSearchPage]
+class ItemSearchRoute extends _i5.PageRouteInfo<void> {
+  const ItemSearchRoute({List<_i5.PageRouteInfo>? children})
+    : super(ItemSearchRoute.name, initialChildren: children);
+
+  static const String name = 'ItemSearchRoute';
+
+  static _i5.PageInfo page = _i5.PageInfo(
+    name,
+    builder: (data) {
+      return const _i3.ItemSearchPage();
+    },
+  );
+}
+
+/// generated route for
+/// [_i4.SplashPage]
+class SplashRoute extends _i5.PageRouteInfo<void> {
+  const SplashRoute({List<_i5.PageRouteInfo>? children})
     : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
-  static _i4.PageInfo page = _i4.PageInfo(
+  static _i5.PageInfo page = _i5.PageInfo(
     name,
     builder: (data) {
-      return const _i3.SplashPage();
+      return const _i4.SplashPage();
     },
   );
 }

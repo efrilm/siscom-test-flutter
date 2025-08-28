@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../common/theme/theme.dart';
-import '../bottom_sheet/detail_bottom_sheet.dart';
+import '../../../../common/theme/theme.dart';
+import '../../../components/bottom_sheet/detail_bottom_sheet.dart';
 
 class ItemCard extends StatelessWidget {
   final Map<String, dynamic> item;

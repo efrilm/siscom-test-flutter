@@ -6,3 +6,4 @@ import '../../../common/theme/theme.dart';
 
 part 'text_form_field.dart';
 part 'dropdown_search_field.dart';
+part 'search_form_field.dart';
