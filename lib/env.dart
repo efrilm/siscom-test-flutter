@@ -9,12 +9,12 @@ abstract class Env {
 @dev
 class DevEnv implements Env {
   @override
-  String get baseUrl => 'http://192.168.1.19:3000'; // example value
+  String get baseUrl => 'http://10.0.2.2:3000'; // example value
 }
 
 @Injectable(as: Env)
 @prod
 class ProdEnv implements Env {
   @override
-  String get baseUrl => 'http://192.168.1.19:3000';
+  String get baseUrl => 'http://10.0.2.2:3000';
 }
