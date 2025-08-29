@@ -1,4 +1,4 @@
-package com.example.siscom_test_flutter
+package com.dev.siscom_test
 
 import io.flutter.embedding.android.FlutterActivity
 
